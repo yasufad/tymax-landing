@@ -100,8 +100,8 @@ export default function PricingPage() {
                             <path fill="var(--highlight)" d="M200,200c0,55.2-44.8,100-100,100S0,255.2,0,200s44.8-100,100-100,100,44.8,100,100Z"/>
                           </g>
                           <defs>
-                            <filter id="blur" x="0" y="0" width="3000" height="5000" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
-                              <feFlood flood-opacity="0" result="BackgroundImageFix"/>
+                            <filter id="blur" x="0" y="0" width="3000" height="5000" filterUnits="userSpaceOnUse" colorInterpolationFilters="sRGB">
+                              <feFlood floodOpacity="0" result="BackgroundImageFix"/>
                               <feBlend mode="normal" in="SourceGraphic" in2="BackgroundImageFix" result="shape"/>
                               <feGaussianBlur stdDeviation="60" result="effect1_foregroundBlur"/>
                             </filter>
@@ -188,8 +188,8 @@ export default function PricingPage() {
                             <path fill="var(--highlight)" d="M200,200c0,55.2-44.8,100-100,100S0,255.2,0,200s44.8-100,100-100,100,44.8,100,100Z"/>
                           </g>
                           <defs>
-                            <filter id="blur-2" x="0" y="0" width="3000" height="5000" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
-                              <feFlood flood-opacity="0" result="BackgroundImageFix"/>
+                            <filter id="blur-2" x="0" y="0" width="3000" height="5000" filterUnits="userSpaceOnUse" colorInterpolationFilters="sRGB">
+                              <feFlood floodOpacity="0" result="BackgroundImageFix"/>
                               <feBlend mode="normal" in="SourceGraphic" in2="BackgroundImageFix" result="shape"/>
                               <feGaussianBlur stdDeviation="60" result="effect1_foregroundBlur"/>
                             </filter>
@@ -276,8 +276,8 @@ export default function PricingPage() {
                             <path fill="var(--highlight)" d="M200,200c0,55.2-44.8,100-100,100S0,255.2,0,200s44.8-100,100-100,100,44.8,100,100Z"/>
                           </g>
                           <defs>
-                            <filter id="blur-3" x="0" y="0" width="3000" height="5000" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
-                              <feFlood flood-opacity="0" result="BackgroundImageFix"/>
+                            <filter id="blur-3" x="0" y="0" width="3000" height="5000" filterUnits="userSpaceOnUse" colorInterpolationFilters="sRGB">
+                              <feFlood floodOpacity="0" result="BackgroundImageFix"/>
                               <feBlend mode="normal" in="SourceGraphic" in2="BackgroundImageFix" result="shape"/>
                               <feGaussianBlur stdDeviation="60" result="effect1_foregroundBlur"/>
                             </filter>
