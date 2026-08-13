@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Script from "next/script";
+import { Analytics } from "@vercel/analytics/react";
 import Loader from "@/components/Loader";
 import Header from "@/components/Header";
 import Navigation from "@/components/Navigation";
@@ -70,6 +71,7 @@ export default function RootLayout({
         <Footer />
         <Cursor />
         <ClientScriptInitialiser />
+        <Analytics />
 
         <Script src="/js/libs.min.js" strategy="afterInteractive" />
         <Script src="/js/app.min.js" strategy="afterInteractive" />
