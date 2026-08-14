@@ -22,23 +22,23 @@
 .topbar, .topbarStart, .topbarActions, .sectionHeading, .channelRow, .rowActions, .attentionItem { display: flex; align-items: center; }
 .topbar { min-height: 2.25rem; justify-content: space-between; }
 .topbarStart, .topbarActions { gap: 0.75rem; }
-.organisationSwitch, .topbarActions button, .rowActions button, .attentionItem button, .secondaryAction { display: inline-flex; align-items: center; gap: 0.4rem; border: 0; color: var(--muted); background: transparent; font: inherit; font-size: 0.8rem; font-weight: 700; cursor: pointer; }
+.organisationSwitch, .topbarActions button, .rowActions button, .attentionItem button, .secondaryAction { display: inline-flex; align-items: center; gap: 0.4rem; border: 0; color: var(--muted); background: transparent; font: inherit; font-size: 0.9rem; font-weight: 700; cursor: pointer; }
 .organisationSwitch { padding: 0.45rem 0.65rem; border: 1px solid var(--line); border-radius: 0.35rem; color: var(--text); background: var(--surface); }
 .organisationSwitch svg, .topbarActions svg { width: 0.9rem; height: 0.9rem; }
 .topbarActions button:hover, .rowActions button:hover, .attentionItem button:hover { color: var(--text); }
 .accountControl { padding-left: 0.75rem; border-left: 1px solid var(--line) !important; }
 
 .pageHeading { display: flex; align-items: end; justify-content: space-between; gap: 2rem; padding: clamp(4rem, 8vh, 7rem) 0 2.8rem; border-bottom: 1px solid var(--line); }
-.eyebrow, .sectionLabel, .channelState, .severity, .activityList time { font-family: var(--_font-accent, "JetBrains Mono", monospace); font-size: 0.65rem; font-weight: 700; letter-spacing: 0.11em; text-transform: uppercase; }
+.eyebrow, .sectionLabel, .channelState, .severity, .activityList time { font-family: var(--_font-accent, "JetBrains Mono", monospace); font-size: 0.75rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; }
 .eyebrow, .sectionLabel { margin: 0 0 0.75rem; color: var(--muted); }
 .title { margin: 0; font-size: clamp(2.75rem, 5.5vw, 5.5rem); font-weight: 500; letter-spacing: -0.07em; line-height: 0.9; }
-.introduction { max-width: 27rem; margin: 0; color: var(--muted); font-size: 0.92rem; line-height: 1.6; }
+.introduction { max-width: 30rem; margin: 0; color: var(--muted); font-size: 1.05rem; line-height: 1.6; }
 
 .section { padding: 2.25rem 0; border-bottom: 1px solid var(--line); }
 .sectionHeading { justify-content: space-between; gap: 1rem; margin-bottom: 1.5rem; }
-.sectionHeading h2 { margin: 0; font-size: clamp(1.25rem, 2vw, 1.7rem); font-weight: 600; letter-spacing: -0.045em; line-height: 1; }
-.primaryAction, .secondaryAction { min-height: 2.65rem; padding: 0 0.85rem; border: 1px solid var(--line); border-radius: 0.3rem; color: var(--text); }
-.primaryAction { border-color: var(--accent); background: var(--accent); font: inherit; font-size: 0.8rem; font-weight: 700; cursor: pointer; }
+.sectionHeading h2 { margin: 0; font-size: clamp(1.5rem, 2.2vw, 2rem); font-weight: 600; letter-spacing: -0.05em; line-height: 1; }
+.primaryAction, .secondaryAction { min-height: 2.85rem; padding: 0 1rem; border: 1px solid var(--line); border-radius: 0.3rem; color: var(--text); }
+.primaryAction { border-color: var(--accent); background: var(--accent); font: inherit; font-size: 0.9rem; font-weight: 700; cursor: pointer; }
 .primaryAction:hover { background: var(--accent-hover); }
 .secondaryAction:hover { background: var(--surface-raised); }
 
@@ -50,9 +50,9 @@
 .healthy { background: var(--success); box-shadow: 0 0 0 0.25rem rgba(105, 198, 138, 0.12); }
 .degraded { background: var(--warning); box-shadow: 0 0 0 0.25rem rgba(220, 173, 101, 0.12); }
 .offline { background: transparent; box-shadow: inset 0 0 0 1px var(--muted); }
-.channelDetails h3, .attentionItem h3, .nodeGrid h3 { margin: 0; font-size: 1rem; font-weight: 700; }
-.channelDetails p, .attentionItem p, .nodeGrid p { margin: 0.35rem 0 0; color: var(--text); font-size: 0.88rem; font-weight: 600; }
-.channelDetails > span, .nodeGrid > article > span:last-child { display: block; margin-top: 0.3rem; color: var(--muted); font-size: 0.78rem; }
+.channelDetails h3, .attentionItem h3, .nodeGrid h3 { margin: 0; font-size: 1.1rem; font-weight: 700; }
+.channelDetails p, .attentionItem p, .nodeGrid p { margin: 0.4rem 0 0; color: var(--text); font-size: 0.98rem; font-weight: 600; }
+.channelDetails > span, .nodeGrid > article > span:last-child { display: block; margin-top: 0.35rem; color: var(--muted); font-size: 0.9rem; }
 .rowActions { align-self: start; gap: 0.85rem; }
 
 .lowerGrid { display: grid; grid-template-columns: minmax(0, 1.3fr) minmax(20rem, 0.7fr); gap: 3rem; }
@@ -63,7 +63,7 @@
 .high { color: var(--danger); }.warning { color: var(--warning); }
 .attentionItem button { padding-top: 0.2rem; color: var(--text); }
 .activityList { display: grid; gap: 1.25rem; margin: 0; padding: 0; list-style: none; }
-.activityList li { display: grid; grid-template-columns: 3.3rem 1fr; gap: 0.75rem; color: var(--muted); font-size: 0.84rem; line-height: 1.45; }
+.activityList li { display: grid; grid-template-columns: 3.8rem 1fr; gap: 0.85rem; color: var(--muted); font-size: 0.95rem; line-height: 1.5; }
 .activityList time { color: var(--text); letter-spacing: 0; }
 
 .nodesSection { padding-bottom: 0; border-bottom: 0; }
