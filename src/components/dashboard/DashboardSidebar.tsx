@@ -16,6 +16,7 @@ import {
   UsersThreeIcon,
 } from "@phosphor-icons/react";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 import {
   Sidebar,
   SidebarContent,
@@ -34,38 +35,40 @@ const navigationGroups = [
   {
     label: "Operations",
     items: [
-      { label: "Overview", href: "/dashboard", icon: HouseIcon, active: true },
-      { label: "Channels", icon: BroadcastIcon },
+      { label: "Overview", href: "/dashboard", icon: HouseIcon },
+      { label: "Channels", href: "/dashboard/channels", icon: BroadcastIcon },
     ],
   },
   {
     label: "Content",
     items: [
-      { label: "Media", icon: FilmReelIcon },
-      { label: "Recordings", icon: FilmReelIcon },
+      { label: "Media", href: "/dashboard/media", icon: FilmReelIcon },
+      { label: "Recordings", href: "/dashboard/recordings", icon: FilmReelIcon },
     ],
   },
   {
     label: "Insights",
     items: [
-      { label: "Analytics", icon: ChartBarIcon },
-      { label: "Usage", icon: ChartLineUpIcon },
+      { label: "Analytics", href: "/dashboard/analytics", icon: ChartBarIcon },
+      { label: "Usage", href: "/dashboard/usage", icon: ChartLineUpIcon },
     ],
   },
   {
     label: "Organisation",
     items: [
-      { label: "Members", icon: UsersThreeIcon },
-      { label: "Roles", icon: ShieldCheckIcon },
-      { label: "Integrations", icon: PlugsConnectedIcon },
-      { label: "Nodes", icon: DesktopTowerIcon },
-      { label: "Billing", icon: CreditCardIcon },
-      { label: "Settings", icon: GearIcon },
+      { label: "Members", href: "/dashboard/members", icon: UsersThreeIcon },
+      { label: "Roles", href: "/dashboard/roles", icon: ShieldCheckIcon },
+      { label: "Integrations", href: "/dashboard/integrations", icon: PlugsConnectedIcon },
+      { label: "Nodes", href: "/dashboard/nodes", icon: DesktopTowerIcon },
+      { label: "Billing", href: "/dashboard/billing", icon: CreditCardIcon },
+      { label: "Settings", href: "/dashboard/settings", icon: GearIcon },
     ],
   },
 ];
 
 export default function DashboardSidebar() {
+  const pathname = usePathname();
+
   return (
     <Sidebar collapsible="icon">
       <SidebarHeader className="border-b border-sidebar-border px-3 py-4">
@@ -80,11 +83,11 @@ export default function DashboardSidebar() {
 
         <SidebarMenu className="mt-4">
           <SidebarMenuItem>
-            <SidebarMenuButton size="lg" tooltip="Workspace" disabled>
+            <SidebarMenuButton size="lg" tooltip="K3 Media" render={<Link href="/dashboard/switcher" />}>
               <span className="flex size-7 shrink-0 items-center justify-center rounded-md bg-primary font-mono text-[0.65rem] font-bold text-primary-foreground">YC</span>
               <span className="grid flex-1 text-left text-sm leading-tight">
-                <span className="truncate font-medium">Your channel</span>
-                <span className="truncate font-mono text-[0.65rem] text-muted-foreground">Workspace</span>
+                <span className="truncate font-medium">K3 Media</span>
+                <span className="truncate font-mono text-[0.65rem] text-muted-foreground">Organisation</span>
               </span>
               <CaretDownIcon className="ml-auto size-4" weight="bold" />
             </SidebarMenuButton>
@@ -104,10 +107,9 @@ export default function DashboardSidebar() {
                   return (
                     <SidebarMenuItem key={item.label}>
                       <SidebarMenuButton
-                        isActive={item.active}
+                        isActive={item.href === "/dashboard" ? pathname === item.href : pathname.startsWith(item.href)}
                         tooltip={item.label}
-                        disabled={!item.href}
-                        render={item.href ? <Link href={item.href} /> : undefined}
+                        render={<Link href={item.href} />}
                       >
                         <Icon weight="regular" />
                         <span>{item.label}</span>
