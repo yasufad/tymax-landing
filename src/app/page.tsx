@@ -989,7 +989,7 @@ export default function HomePage() {
                           <div className="mxd-tech-stack__item">
                             <div className="mxd-tech-stack__divider divider-top anim-uni-clip-in"></div>
                             <div className="mxd-tech-stack__logo">
-                              <svg viewBox="0 0 42.4 36" fill="currentColor"><path d="M25.8,13.8h2.8v5.5h-2.8v-5.5ZM13.8,16.6v2.8h2.8v-5.5h-2.8v2.8ZM32.2,0v2.8h-2.8V0h2.8ZM26.7,5.5h2.8v-2.8h-2.8v2.8ZM21.2,5.5h-5.5v2.8h11.1v-2.8h-5.5ZM12.8,2.8v2.8h2.8v-2.8h-2.8ZM10.1,0v2.8h2.8V0h-2.8ZM7.3,5.5v5.5h2.8V2.8h-2.8v2.8ZM4.5,13.8v2.8H0v2.8h2.8v2.8H0v2.8h2.8v11.1h2.8v-8.3h5.5v-2.8h-5.5v-8.3h1.9v-5.5h-2.9v2.8ZM35,5.5v-2.8h-2.8v8.3h2.8v-5.5ZM42.4,19.4v-2.8h-4.7v-5.5h-2.8v5.5h1.9v8.3h-5.5v2.8h5.5v8.3h2.8v-11.1h2.8v-2.8h-2.8v-2.8h2.8Z"/></svg>
+                              <img src="/img/tymax-logo.svg" alt="" style={{ width: "2.4rem", height: "2.4rem", objectFit: "contain" }} />
                             </div>
                             <div className="mxd-tech-stack__name anim-uni-slide-down">
                               <p>Tymax</p>
