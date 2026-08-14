@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Link from "next/link";
 
 export const metadata: Metadata = {
   title: "Tymax Pricing: Start Your Internet Channel",
@@ -36,9 +37,9 @@ export default function PricingPage() {
                     <div className="inner-headline__breadcrumbs loading-fade">
                       <div className="breadcrumbs__nav">
                         <span>
-                          <a href="index.html">
+                          <Link href="/">
                             <span className="mxd-scramble">Home</span>
-                          </a>
+                          </Link>
                         </span>
                         <span className="current-item">Pricing
                         </span>
@@ -126,14 +127,14 @@ export default function PricingPage() {
                             <p className="pricing-data__caption t-small t-muted t-140 anim-uni-in-up">Monthly subscription</p>
                           </div>
                           <div className="pricing-data__btnholder anim-uni-in-up">
-                            <a className="btn btn-default-icon btn-default-outline btn-default-fullwidth slide-right" href="index.html#early-access">
+                            <Link className="btn btn-default-icon btn-default-outline btn-default-fullwidth slide-right" href="/#early-access">
                               <span className="btn-caption mxd-scramble">Get Early Access</span>
                               <i className="btn-icon">
                                 <svg xmlns="http://www.w3.org/2000/svg" version="1.1" viewBox="0 0 18 18">
                                   <path d="M10.8,0v3.6h-3.6V0h3.6ZM14.4,10.8h3.6v-3.6h-3.6v-3.6h-3.6v3.6H0v3.6h10.8v3.6h3.6v-3.6ZM10.8,14.4h-3.6v3.6h3.6v-3.6Z"/>
                                 </svg>
                               </i>
-                            </a>
+                            </Link>
                           </div>
                         </div>
                       </div>
@@ -175,7 +176,7 @@ export default function PricingPage() {
                         </div>
                       </div>
                       <div className="mxd-pricing-table__link anim-uni-in-up">
-                        <a href="index.html#early-access">Need more info? Let&apos;s talk.</a>
+                        <Link href="/#early-access">Need more info? Let&apos;s talk.</Link>
                       </div>
                     </div>
                   </div>
@@ -263,7 +264,7 @@ export default function PricingPage() {
                         </div>
                       </div>
                       <div className="mxd-pricing-table__link anim-uni-in-up">
-                        <a href="index.html#early-access">Need more info? Let&apos;s talk.</a>
+                        <Link href="/#early-access">Need more info? Let&apos;s talk.</Link>
                       </div>
                     </div>
                   </div>
@@ -290,14 +291,14 @@ export default function PricingPage() {
                         </div>
                         <div className="pricing-data__info">
                           <div className="pricing-data__btnholder anim-uni-in-up">
-                            <a className="btn btn-default-icon btn-default-outline btn-default-fullwidth slide-right" href="index.html#capabilities">
+                            <Link className="btn btn-default-icon btn-default-outline btn-default-fullwidth slide-right" href="/#capabilities">
                               <span className="btn-caption mxd-scramble">Explore Add-ons</span>
                               <i className="btn-icon">
                                 <svg xmlns="http://www.w3.org/2000/svg" version="1.1" viewBox="0 0 18 18">
                                   <path d="M10.8,0v3.6h-3.6V0h3.6ZM14.4,10.8h3.6v-3.6h-3.6v-3.6h-3.6v3.6H0v3.6h10.8v3.6h3.6v-3.6ZM10.8,14.4h-3.6v3.6h3.6v-3.6Z"/>
                                 </svg>
                               </i>
-                            </a>
+                            </Link>
                           </div>
                         </div>
                       </div>
@@ -516,9 +517,9 @@ export default function PricingPage() {
                     <div className="col-12 col-xl-4 mxd-grid-item">
                       <div className="mxd-section-title__data top-controls">
                         <div className="mxd-section-title__controls anim-uni-in-up">
-                          <a className="btn btn-line btn-line-default" href="index.html#about">
+                          <Link className="btn btn-line btn-line-default" href="/#about">
                             <span className="btn-caption mxd-scramble">Explore Tymax</span>
-                          </a>
+                          </Link>
                         </div>
                         <div className="mxd-section-title__caption no-max-width pre-controls">
                           <p className="t-bold t-large mxd-split-lines">Thoughts, views, and updates on the future of internet channels. <span>A K3HQ project.</span></p>
@@ -538,12 +539,12 @@ export default function PricingPage() {
                   <div className="row g-0 mxd-blog-grid__gallery">
                     <div className="col-12 col-lg-4 mxd-blog-item animate-card-3">
                       
-                      <a className="mxd-blog-item__media active-cursor-permanent" data-cursor-text="Tymax" href="index.html#about">
+                      <Link className="mxd-blog-item__media active-cursor-permanent" data-cursor-text="Tymax" href="/#about">
                         <img className="" src="/img/blog/preview/grid-x3/pr-01.webp" alt="Blog Preview Image" />
-                      </a>
+                      </Link>
                       <div className="mxd-blog-item__caption">
                         <div className="mxd-blog-item__title">
-                          <a className="blog-name-m" href="index.html#about">A livestream ends. Your channel shouldn&apos;t.</a>
+                          <Link className="blog-name-m" href="/#about">A livestream ends. Your channel shouldn&apos;t.</Link>
                         </div>
                         <div className="mxd-blog-item__tags">
                           <span className="tag tag-s tag-medium mxd-scramble">Channels</span>
@@ -554,12 +555,12 @@ export default function PricingPage() {
                     </div>
                     <div className="col-12 col-lg-4 mxd-blog-item animate-card-3">
                       
-                      <a className="mxd-blog-item__media active-cursor-permanent" data-cursor-text="Tymax" href="index.html#about">
+                      <Link className="mxd-blog-item__media active-cursor-permanent" data-cursor-text="Tymax" href="/#about">
                         <img className="" src="/img/blog/preview/grid-x3/pr-02.webp" alt="Blog Preview Image" />
-                      </a>
+                      </Link>
                       <div className="mxd-blog-item__caption">
                         <div className="mxd-blog-item__title">
-                          <a className="blog-name-m" href="index.html#about">Your audience shouldn&apos;t have to move.</a>
+                          <Link className="blog-name-m" href="/#about">Your audience shouldn&apos;t have to move.</Link>
                         </div>
                         <div className="mxd-blog-item__tags">
                           <span className="tag tag-s tag-medium mxd-scramble">Audience</span>
@@ -570,12 +571,12 @@ export default function PricingPage() {
                     </div>
                     <div className="col-12 col-lg-4 mxd-blog-item animate-card-3">
                       
-                      <a className="mxd-blog-item__media active-cursor-permanent" data-cursor-text="Tymax" href="index.html#about">
+                      <Link className="mxd-blog-item__media active-cursor-permanent" data-cursor-text="Tymax" href="/#about">
                         <img className="" src="/img/blog/preview/grid-x3/pr-03.webp" alt="Blog Preview Image" />
-                      </a>
+                      </Link>
                       <div className="mxd-blog-item__caption">
                         <div className="mxd-blog-item__title">
-                          <a className="blog-name-m" href="index.html#about">Live first. Recording when you need it.</a>
+                          <Link className="blog-name-m" href="/#about">Live first. Recording when you need it.</Link>
                         </div>
                         <div className="mxd-blog-item__tags">
                           <span className="tag tag-s tag-medium mxd-scramble">Live</span>
@@ -607,14 +608,14 @@ export default function PricingPage() {
                 
                 <div className="mxd-promo__content">
                   <div className="mxd-promo__btngroup anim-uni-in-up">
-                    <a className="btn btn-line btn-line-opposite" href="index.html#early-access">
+                    <Link className="btn btn-line btn-line-opposite" href="/#early-access">
                       <span className="btn-caption mxd-scramble">Get Early Access</span>
-                    </a>
+                    </Link>
                   </div>
                   <div className="mxd-promo__caption">
-                    <a className="active-cursor-accent" data-cursor-text="Get Early Access" href="index.html#early-access">
+                    <Link className="active-cursor-accent" data-cursor-text="Get Early Access" href="/#early-access">
                       <h2 className="reveal-type opposite">Ready to put your channel on air?</h2>
-                    </a>
+                    </Link>
                   </div>
                 </div>
                 
