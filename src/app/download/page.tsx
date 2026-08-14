@@ -119,12 +119,6 @@ export default function DownloadPage() {
                             <p className="pricing-header__title anim-uni-in-up">{platform.name}</p>
                           </div>
                           <div className="pricing-data__info">
-                            <div className="pricing-data__price">
-                              <div className="pricing-data__num anim-uni-in-up">
-                                <span className="pricing-data__amount">Free</span>
-                              </div>
-                              <p className="pricing-data__caption t-small t-muted t-140 anim-uni-in-up">Included with your Tymax account</p>
-                            </div>
                             <div className="pricing-data__btnholder anim-uni-in-up">
                               <button className="btn btn-default-icon btn-default-outline btn-default-fullwidth slide-right" type="button">
                                 <span className="btn-caption mxd-scramble">{platform.button}</span>
