@@ -1,0 +1,478 @@
+:global(body:has(.dashboard-shell)) {
+  background: #111315;
+}
+
+:global(body:has(.dashboard-shell) .mxd-loader),
+:global(body:has(.dashboard-shell) .mxd-page-transition),
+:global(body:has(.dashboard-shell) .mxd-menu__contain),
+:global(body:has(.dashboard-shell) .mxd-menu),
+:global(body:has(.dashboard-shell) .mxd-header),
+:global(body:has(.dashboard-shell) .mxd-footer),
+:global(body:has(.dashboard-shell) .mxd-cursor) {
+  display: none;
+}
+
+.shell {
+  --canvas: #111315;
+  --surface: #191c1f;
+  --surface-raised: #202429;
+  --line: rgba(241, 239, 234, 0.12);
+  --text: #f1efea;
+  --muted: #9ca2a9;
+  --accent: #d4ef5a;
+  display: grid;
+  min-height: 100svh;
+  grid-template-columns: 17.5rem minmax(0, 1fr);
+  color: var(--text);
+  background: var(--canvas);
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.sidebar {
+  display: flex;
+  min-height: 100%;
+  flex-direction: column;
+  padding: 2rem 1.25rem 1.25rem;
+  border-right: 1px solid var(--line);
+  background: #15181b;
+}
+
+.logo {
+  display: inline-flex;
+  width: fit-content;
+  align-items: center;
+  gap: 0.7rem;
+  color: var(--text);
+}
+
+.logoMark {
+  width: 2rem;
+  height: 2rem;
+  filter: invert(1);
+}
+
+.logoName {
+  font-size: 1.35rem;
+  font-weight: 700;
+  letter-spacing: -0.06em;
+}
+
+.workspace {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 3.5rem;
+  padding: 0.85rem 0.75rem;
+  border: 1px solid var(--line);
+  border-radius: 0.45rem;
+  color: var(--text);
+  background: var(--surface);
+}
+
+.workspaceLabel,
+.navLabel,
+.eyebrow,
+.metaLabel,
+.activityTime {
+  color: var(--muted);
+  font-size: 0.66rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.workspaceName {
+  display: block;
+  margin-top: 0.25rem;
+  font-size: 0.9rem;
+  font-weight: 600;
+}
+
+.workspaceIcon {
+  color: var(--muted);
+  font-size: 1.1rem;
+}
+
+.nav {
+  display: grid;
+  gap: 0.2rem;
+  margin-top: 2.5rem;
+}
+
+.navLabel {
+  margin: 0 0 0.65rem 0.75rem;
+}
+
+.navLink {
+  display: flex;
+  min-height: 2.8rem;
+  align-items: center;
+  gap: 0.8rem;
+  padding: 0 0.75rem;
+  border-radius: 0.35rem;
+  color: var(--muted);
+  font-size: 0.9rem;
+  font-weight: 600;
+}
+
+.navLink:hover {
+  color: var(--text);
+  background: var(--surface);
+}
+
+.navLinkActive {
+  color: #141513;
+  background: var(--accent);
+}
+
+.navLinkActive:hover {
+  color: #141513;
+  background: var(--accent);
+}
+
+.navIcon {
+  width: 1rem;
+  color: currentColor;
+}
+
+.sidebarFooter {
+  display: grid;
+  gap: 0.8rem;
+  margin-top: auto;
+}
+
+.accountLink {
+  display: flex;
+  align-items: center;
+  gap: 0.7rem;
+  padding: 0.75rem;
+  border-top: 1px solid var(--line);
+  color: var(--muted);
+  font-size: 0.85rem;
+  font-weight: 600;
+}
+
+.avatar {
+  display: grid;
+  width: 1.9rem;
+  height: 1.9rem;
+  place-items: center;
+  border-radius: 50%;
+  color: #141513;
+  background: #d5d0ca;
+  font-size: 0.67rem;
+  font-weight: 700;
+}
+
+.main {
+  min-width: 0;
+  padding: clamp(1.25rem, 3vw, 3.5rem);
+}
+
+.topbar,
+.pageHeading,
+.cardHeader,
+.activityItem,
+.usageHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.topbar {
+  min-height: 2rem;
+}
+
+.pageHeading {
+  align-items: end;
+  margin: clamp(3rem, 8vh, 7rem) 0 2.5rem;
+}
+
+.eyebrow {
+  margin: 0 0 0.7rem;
+}
+
+.title {
+  max-width: 12ch;
+  margin: 0;
+  font-family: var(--font-headline, Arial, sans-serif);
+  font-size: clamp(2.8rem, 5vw, 5.5rem);
+  font-weight: 500;
+  letter-spacing: -0.065em;
+  line-height: 0.9;
+}
+
+.date {
+  color: var(--muted);
+  font-size: 0.85rem;
+}
+
+.overviewGrid {
+  display: grid;
+  grid-template-columns: repeat(12, minmax(0, 1fr));
+  gap: 1rem;
+}
+
+.card {
+  min-height: 12rem;
+  padding: 1.4rem;
+  border: 1px solid var(--line);
+  border-radius: 0.55rem;
+  background: var(--surface);
+}
+
+.statusCard {
+  grid-column: span 5;
+}
+
+.usageCard {
+  grid-column: span 4;
+}
+
+.planCard {
+  grid-column: span 3;
+}
+
+.cardTitle {
+  margin: 0;
+  color: var(--muted);
+  font-size: 0.8rem;
+  font-weight: 600;
+}
+
+.status {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  margin-top: 2.25rem;
+  font-size: 1.1rem;
+  font-weight: 600;
+}
+
+.statusDot {
+  width: 0.55rem;
+  height: 0.55rem;
+  border-radius: 50%;
+  background: var(--accent);
+  box-shadow: 0 0 0 0.25rem rgba(212, 239, 90, 0.12);
+}
+
+.cardCopy {
+  max-width: 28rem;
+  margin: 0.75rem 0 0;
+  color: var(--muted);
+  font-size: 0.88rem;
+  line-height: 1.5;
+}
+
+.usageValue,
+.planValue {
+  margin: 2rem 0 0.4rem;
+  font-family: var(--font-headline, Arial, sans-serif);
+  font-size: clamp(2rem, 3vw, 3.2rem);
+  font-weight: 500;
+  letter-spacing: -0.06em;
+  line-height: 1;
+}
+
+.usageValue span {
+  color: var(--muted);
+  font-size: 0.95rem;
+  font-weight: 600;
+  letter-spacing: 0;
+}
+
+.progress {
+  height: 0.35rem;
+  margin-top: 1.3rem;
+  overflow: hidden;
+  border-radius: 1rem;
+  background: var(--surface-raised);
+}
+
+.progressValue {
+  display: block;
+  width: 0;
+  height: 100%;
+  border-radius: inherit;
+  background: var(--accent);
+}
+
+.planValue {
+  margin-top: 2.2rem;
+  font-size: 1.8rem;
+}
+
+.planMeta {
+  margin: 0.8rem 0 0;
+  color: var(--muted);
+  font-size: 0.82rem;
+}
+
+.lowerGrid {
+  display: grid;
+  grid-template-columns: minmax(0, 1.45fr) minmax(18rem, 0.8fr);
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.emptyState,
+.activity {
+  min-height: 19rem;
+  padding: 1.4rem;
+  border: 1px solid var(--line);
+  border-radius: 0.55rem;
+  background: var(--surface);
+}
+
+.emptyContent {
+  display: grid;
+  min-height: 13rem;
+  place-content: center start;
+}
+
+.emptyTitle {
+  max-width: 15ch;
+  margin: 0;
+  font-family: var(--font-headline, Arial, sans-serif);
+  font-size: clamp(1.8rem, 3vw, 2.8rem);
+  font-weight: 500;
+  letter-spacing: -0.055em;
+  line-height: 0.95;
+}
+
+.emptyCopy {
+  max-width: 29rem;
+  margin: 0.8rem 0 0;
+  color: var(--muted);
+  font-size: 0.9rem;
+  line-height: 1.5;
+}
+
+.activityList {
+  display: grid;
+  gap: 1rem;
+  margin-top: 1.7rem;
+}
+
+.activityItem {
+  align-items: start;
+  gap: 1rem;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid var(--line);
+}
+
+.activityItem:last-child {
+  border-bottom: 0;
+}
+
+.activityName {
+  margin: 0;
+  font-size: 0.88rem;
+  font-weight: 600;
+}
+
+.activityCopy {
+  margin: 0.3rem 0 0;
+  color: var(--muted);
+  font-size: 0.8rem;
+}
+
+@media (max-width: 1000px) {
+  .shell {
+    grid-template-columns: 5rem minmax(0, 1fr);
+  }
+
+  .sidebar {
+    align-items: center;
+    padding-inline: 0.75rem;
+  }
+
+  .logoName,
+  .workspace div,
+  .workspaceIcon,
+  .navLabel,
+  .navLink span,
+  .accountLink span {
+    display: none;
+  }
+
+  .workspace {
+    justify-content: center;
+    margin-top: 2.5rem;
+    padding: 0.7rem;
+  }
+
+  .navLink {
+    justify-content: center;
+    padding: 0;
+  }
+
+  .statusCard {
+    grid-column: span 6;
+  }
+
+  .usageCard,
+  .planCard {
+    grid-column: span 3;
+  }
+}
+
+@media (max-width: 720px) {
+  .shell {
+    display: block;
+    padding-bottom: 4.75rem;
+  }
+
+  .sidebar {
+    position: fixed;
+    z-index: 2;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    display: grid;
+    min-height: auto;
+    grid-template-columns: repeat(5, 1fr);
+    padding: 0.55rem;
+    border-top: 1px solid var(--line);
+    border-right: 0;
+  }
+
+  .logo,
+  .workspace,
+  .sidebarFooter {
+    display: none;
+  }
+
+  .nav {
+    display: contents;
+    margin: 0;
+  }
+
+  .navLink {
+    min-height: 3.4rem;
+  }
+
+  .main {
+    padding: 1.25rem;
+  }
+
+  .pageHeading {
+    align-items: start;
+    margin: 4.5rem 0 2rem;
+  }
+
+  .date {
+    display: none;
+  }
+
+  .statusCard,
+  .usageCard,
+  .planCard {
+    grid-column: span 12;
+  }
+
+  .lowerGrid {
+    grid-template-columns: 1fr;
+  }
+}
