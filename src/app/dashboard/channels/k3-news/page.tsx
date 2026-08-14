@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { ArrowSquareOutIcon, CaretRightIcon } from "@phosphor-icons/react/ssr";
+import Link from "next/link";
 import styles from "./channel.module.css";
 
 export const metadata: Metadata = {
@@ -12,6 +13,10 @@ const health = [
   { label: "Tymax playback", state: "Healthy", tone: "healthy" },
   { label: "YouTube", state: "Healthy", tone: "healthy" },
   { label: "Twitch", state: "Reconnecting", tone: "warning" },
+];
+
+const channelTabs = [
+  ["Overview", "/dashboard/channels/k3-news"], ["Schedule", "/dashboard/channels/k3-news/schedule"], ["Sources", "/dashboard/channels/k3-news/sources"], ["Distribution", "/dashboard/channels/k3-news/distribution"], ["Media", "/dashboard/channels/k3-news/media"], ["Recordings", "/dashboard/channels/k3-news/recordings"], ["Analytics", "/dashboard/channels/k3-news/analytics"], ["Access", "/dashboard/channels/k3-news/access"], ["Settings", "/dashboard/channels/k3-news/settings"],
 ];
 
 export default function K3NewsOverviewPage() {
@@ -29,15 +34,7 @@ export default function K3NewsOverviewPage() {
       </header>
 
       <nav className={styles.channelNavigation} aria-label="Channel administration">
-        <button className={styles.active} type="button">Overview</button>
-        <button type="button">Schedule</button>
-        <button type="button">Sources</button>
-        <button type="button">Distribution</button>
-        <button type="button">Media</button>
-        <button type="button">Recordings</button>
-        <button type="button">Analytics</button>
-        <button type="button">Access</button>
-        <button type="button">Settings</button>
+        {channelTabs.map(([label, href]) => <Link key={label} className={label === "Overview" ? styles.active : undefined} href={href}>{label}</Link>)}
       </nav>
 
       <section className={styles.heading}>
