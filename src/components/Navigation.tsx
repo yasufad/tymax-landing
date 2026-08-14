@@ -82,7 +82,7 @@ export default function Navigation() {
                             <li className="submenu__item"><Link href="/#broadcasters">For Broadcasters</Link></li>
                             <li className="submenu__item"><Link href="/#audience">Audience</Link></li>
                             <li className="submenu__item"><Link href="/pricing">Pricing</Link></li>
-                            <li className="submenu__item"><Link href="/#early-access">Early Access</Link></li>
+                            <li className="submenu__item"><Link href="/sign-in">Early Access</Link></li>
                           </ul>
                           <div className="main-menu__divider divider-top"></div>
                         </li>
@@ -125,7 +125,7 @@ export default function Navigation() {
                             <li className="submenu__item"><Link href="/#broadcasters">Broadcasters</Link></li>
                             <li className="submenu__item"><Link href="/pricing">Pricing</Link></li>
                             <li className="submenu__item"><Link href="/#faq">FAQ</Link></li>
-                            <li className="submenu__item"><Link href="/#early-access">Early Access</Link></li>
+                            <li className="submenu__item"><Link href="/sign-in">Early Access</Link></li>
                           </ul>
                           <div className="main-menu__divider divider-bottom"></div>
                         </li>
@@ -150,7 +150,7 @@ export default function Navigation() {
                         </li>
                         <li className="main-menu__item">
                           <div className="main-menu__toggle">
-                            <Link className="main-menu__link" href="/#early-access">
+                            <Link className="main-menu__link" href="/sign-in">
                               <span className="main-menu__number">/ 05</span>
                               <span className="main-menu__caption">Early Access</span>
                             </Link>
@@ -167,7 +167,7 @@ export default function Navigation() {
                     <div className="menu-contact__item">
                       <ul className="menu-contact__list">
                         <li>
-                          <Link className="tag tag-m" href="/#early-access">
+                          <Link className="tag tag-m" href="/sign-in">
                             <span className="mxd-scramble">Get Early Access</span>
                           </Link>
                         </li>
