@@ -1,3 +1,5 @@
+import Link from "next/link";
+
 export default function HomePage() {
   return (
 <main id="mxd-page-content" className="mxd-page-content">
@@ -20,10 +22,10 @@ export default function HomePage() {
 
         <div className="mxd-hero-03">
           <div className="mxd-hero-03__headline">
-            <a className="active-cursor-accent" data-cursor-text="Get Early Access" href="#early-access">
+            <Link className="active-cursor-accent" data-cursor-text="Get Early Access" href="/sign-in">
               <h1 className="permanent loading-split">Run your channel from Tymax.</h1>
               <p className="t-medium t-permanent mt-3" style={{"fontSize":"1.25rem","fontWeight":"500","marginTop":"1rem","opacity":"0.8"}}>Broadcast live. Reach your audience wherever they already watch.</p>
-            </a>
+            </Link>
             <div className="mxd-hero-media__small">
               <div className="mxd-hero-media__wrapper" data-flip-element="wrapper" data-flip-id="auto-2">
                 <div className="mxd-hero-media__scaling-media" data-flip-element="target">
@@ -50,9 +52,9 @@ export default function HomePage() {
           </div>
 
           <div className="mxd-hero-03__control-right loading-item">
-            <a className="btn btn-line btn-line-small btn-line-medium" href="#early-access">
+            <Link className="btn btn-line btn-line-small btn-line-medium" href="/sign-in">
               <span className="btn-caption mxd-scramble">Early access</span>
-            </a>
+            </Link>
           </div>
 
           <div className="mxd-hero-03__bottom">
@@ -1269,14 +1271,14 @@ export default function HomePage() {
                 </div>
                 <div className="mxd-promo__content">
                   <div className="mxd-promo__btngroup anim-uni-in-up">
-                    <a className="btn btn-line btn-line-permanent" href="#early-access">
+                    <Link className="btn btn-line btn-line-permanent" href="/sign-in">
                       <span className="btn-caption mxd-scramble">Get Early Access</span>
-                    </a>
+                    </Link>
                   </div>
                   <div className="mxd-promo__caption">
-                    <a className="active-cursor-permanent" data-cursor-text="Get Early Access" href="#early-access">
+                    <Link className="active-cursor-permanent" data-cursor-text="Get Early Access" href="/sign-in">
                       <h2 className="mxd-split-lines permanent">Build something worth tuning into.</h2>
-                    </a>
+                    </Link>
                   </div>
                 </div>
               </div>
