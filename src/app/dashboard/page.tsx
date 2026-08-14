@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { SidebarTrigger } from "@/components/ui/sidebar";
 import styles from "./dashboard.module.css";
 
 export const metadata: Metadata = {
@@ -8,9 +9,12 @@ export const metadata: Metadata = {
 
 export default function DashboardPage() {
   return (
-    <main>
+    <div>
       <header className={styles.topbar}>
-        <span className={styles.metaLabel}>Dashboard / Overview</span>
+        <div className="flex items-center gap-3">
+          <SidebarTrigger aria-label="Toggle dashboard navigation" />
+          <span className={styles.metaLabel}>Dashboard / Overview</span>
+        </div>
         <span className={styles.date}>Channel control</span>
       </header>
 
@@ -78,6 +82,6 @@ export default function DashboardPage() {
           </div>
         </article>
       </section>
-    </main>
+    </div>
   );
 }
