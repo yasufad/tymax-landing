@@ -35,9 +35,14 @@
   --border: var(--line);
   --input: var(--line);
   --ring: #819ffe;
-  display: grid;
-  min-height: 100svh;
-  grid-template-columns: 17.5rem minmax(0, 1fr);
+  --sidebar: #15181b;
+  --sidebar-foreground: var(--text);
+  --sidebar-primary: var(--accent);
+  --sidebar-primary-foreground: #ffffff;
+  --sidebar-accent: var(--surface-raised);
+  --sidebar-accent-foreground: var(--text);
+  --sidebar-border: var(--line);
+  --sidebar-ring: var(--ring);
   color: var(--text);
   background: var(--canvas);
   font-family: var(--_font-default, "Manrope", sans-serif);
@@ -395,10 +400,6 @@
 }
 
 @media (max-width: 1000px) {
-  .shell {
-    grid-template-columns: 5rem minmax(0, 1fr);
-  }
-
   .sidebar {
     align-items: center;
     padding-inline: 0.75rem;
@@ -435,11 +436,6 @@
 }
 
 @media (max-width: 720px) {
-  .shell {
-    display: block;
-    padding-bottom: 4.75rem;
-  }
-
   .sidebar {
     position: fixed;
     z-index: 2;
