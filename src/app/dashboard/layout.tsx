@@ -1,13 +1,21 @@
+import {
+  BroadcastIcon,
+  CaretDownIcon,
+  ChartLineUpIcon,
+  CreditCardIcon,
+  GearIcon,
+  HouseIcon,
+} from "@phosphor-icons/react/ssr";
 import Link from "next/link";
 import type { ReactNode } from "react";
 import styles from "./dashboard.module.css";
 
 const navigationItems = [
-  { label: "Overview", icon: "◉", href: "/dashboard", active: true },
-  { label: "Channels", icon: "◌" },
-  { label: "Usage", icon: "◫" },
-  { label: "Billing", icon: "◇" },
-  { label: "Settings", icon: "⋮" },
+  { label: "Overview", icon: HouseIcon, href: "/dashboard", active: true },
+  { label: "Channels", icon: BroadcastIcon },
+  { label: "Usage", icon: ChartLineUpIcon },
+  { label: "Billing", icon: CreditCardIcon },
+  { label: "Settings", icon: GearIcon },
 ];
 
 export default function DashboardLayout({ children }: { children: ReactNode }) {
@@ -24,29 +32,31 @@ export default function DashboardLayout({ children }: { children: ReactNode }) {
             <span className={styles.workspaceLabel}>Workspace</span>
             <span className={styles.workspaceName}>Your channel</span>
           </div>
-          <span className={styles.workspaceIcon} aria-hidden="true">⌄</span>
+          <CaretDownIcon className={styles.workspaceIcon} size={16} weight="bold" aria-hidden="true" />
         </div>
 
         <nav className={styles.nav}>
           <p className={styles.navLabel}>Workspace</p>
-          {navigationItems.map((item) =>
-            item.href ? (
+          {navigationItems.map((item) => {
+            const Icon = item.icon;
+
+            return item.href ? (
               <Link
                 key={item.label}
                 className={`${styles.navLink} ${item.active ? styles.navLinkActive : ""}`}
                 href={item.href}
                 aria-current={item.active ? "page" : undefined}
               >
-                <span className={styles.navIcon} aria-hidden="true">{item.icon}</span>
+                <Icon className={styles.navIcon} size={18} weight="regular" aria-hidden="true" />
                 <span>{item.label}</span>
               </Link>
             ) : (
               <span key={item.label} className={styles.navLink} aria-disabled="true">
-                <span className={styles.navIcon} aria-hidden="true">{item.icon}</span>
+                <Icon className={styles.navIcon} size={18} weight="regular" aria-hidden="true" />
                 <span>{item.label}</span>
               </span>
-            ),
-          )}
+            );
+          })}
         </nav>
 
         <div className={styles.sidebarFooter}>
