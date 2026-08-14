@@ -1,4 +1,11 @@
 import type { Metadata } from "next";
+import {
+  ArrowUpRightIcon,
+  BroadcastIcon,
+  CheckIcon,
+  LightningIcon,
+  WaveformIcon,
+} from "@phosphor-icons/react/ssr";
 import { SidebarTrigger } from "@/components/ui/sidebar";
 import styles from "./dashboard.module.css";
 
@@ -13,74 +20,90 @@ export default function DashboardPage() {
       <header className={styles.topbar}>
         <div className="flex items-center gap-3">
           <SidebarTrigger aria-label="Toggle dashboard navigation" />
-          <span className={styles.metaLabel}>Dashboard / Overview</span>
+          <span className={styles.metaLabel}>Overview</span>
         </div>
-        <span className={styles.date}>Channel control</span>
+        <span className={styles.date}>Workspace control</span>
       </header>
 
-      <div className={styles.pageHeading}>
-        <div>
-          <p className={styles.eyebrow}>Your workspace</p>
-          <h1 className={styles.title}>Your channel, at a glance.</h1>
-        </div>
-      </div>
-
-      <section className={styles.overviewGrid} aria-label="Channel overview">
-        <article className={`${styles.card} ${styles.statusCard}`}>
-          <p className={styles.cardTitle}>Channel status</p>
-          <div className={styles.status}>
-            <span className={styles.statusDot} aria-hidden="true" />
-            Ready to set up
-          </div>
-          <p className={styles.cardCopy}>
-            Add a channel when you are ready to bring your first programme on air.
+      <section className={styles.hero}>
+        <div className={styles.heroCopy}>
+          <p className={styles.eyebrow}>Control room</p>
+          <h1 className={styles.title}>Set up your first channel.</h1>
+          <p className={styles.introduction}>
+            Bring together your programme, destinations, and audience activity in one place.
           </p>
-        </article>
-
-        <article className={`${styles.card} ${styles.usageCard}`}>
-          <p className={styles.cardTitle}>Usage this period</p>
-          <p className={styles.usageValue}>0 <span>used</span></p>
-          <div className={styles.progress} aria-label="No usage recorded">
-            <span className={styles.progressValue} />
+          <button className={styles.primaryAction} type="button">
+            <BroadcastIcon weight="bold" aria-hidden="true" />
+            Create a channel
+            <ArrowUpRightIcon weight="bold" aria-hidden="true" />
+          </button>
+        </div>
+        <div className={styles.heroSignal} aria-hidden="true">
+          <div className={styles.signalMark}>
+            <WaveformIcon weight="light" />
           </div>
-        </article>
-
-        <article className={`${styles.card} ${styles.planCard}`}>
-          <p className={styles.cardTitle}>Current plan</p>
-          <p className={styles.planValue}>Not set</p>
-          <p className={styles.planMeta}>Plan details will appear here.</p>
-        </article>
+          <span>Awaiting signal</span>
+        </div>
       </section>
 
       <section className={styles.lowerGrid}>
-        <article className={styles.emptyState}>
+        <article className={styles.setupCard}>
           <div className={styles.cardHeader}>
-            <p className={styles.cardTitle}>Channels</p>
-            <span className={styles.metaLabel}>0 total</span>
+            <div>
+              <p className={styles.cardTitle}>Getting started</p>
+              <h2 className={styles.sectionTitle}>A considered first broadcast.</h2>
+            </div>
+            <LightningIcon className={styles.cardIcon} weight="regular" aria-hidden="true" />
           </div>
-          <div className={styles.emptyContent}>
-            <h2 className={styles.emptyTitle}>Nothing is on air yet.</h2>
-            <p className={styles.emptyCopy}>
-              Your channels, schedules, destinations, and audience activity will live here.
-            </p>
-          </div>
+          <ol className={styles.checklist}>
+            <li className={styles.checklistItem}>
+              <span className={styles.stepNumber}>01</span>
+              <div>
+                <h3>Create your channel</h3>
+                <p>Give your programme a home before you go live.</p>
+              </div>
+            </li>
+            <li className={styles.checklistItem}>
+              <span className={styles.stepNumber}>02</span>
+              <div>
+                <h3>Connect a destination</h3>
+                <p>Choose where your audience will watch and listen.</p>
+              </div>
+            </li>
+            <li className={styles.checklistItem}>
+              <span className={styles.stepNumber}>03</span>
+              <div>
+                <h3>Schedule your first broadcast</h3>
+                <p>Set the time, then let Tymax handle the delivery.</p>
+              </div>
+            </li>
+          </ol>
+          <p className={styles.setupNote}>
+            <CheckIcon weight="bold" aria-hidden="true" /> No setup has been started yet.
+          </p>
         </article>
 
-        <article className={styles.activity}>
+        <aside className={styles.workspaceCard}>
           <div className={styles.cardHeader}>
-            <p className={styles.cardTitle}>Recent activity</p>
-            <span className={styles.metaLabel}>Latest</span>
+            <p className={styles.cardTitle}>Workspace</p>
+            <span className={styles.metaLabel}>Current period</span>
           </div>
-          <div className={styles.activityList}>
-            <div className={styles.activityItem}>
-              <div>
-                <p className={styles.activityName}>Your workspace is ready</p>
-                <p className={styles.activityCopy}>Channel activity will appear here.</p>
-              </div>
-              <span className={styles.activityTime}>Now</span>
+          <dl className={styles.summaryList}>
+            <div>
+              <dt>Channels</dt>
+              <dd>0</dd>
             </div>
-          </div>
-        </article>
+            <div>
+              <dt>Usage</dt>
+              <dd>—</dd>
+            </div>
+            <div>
+              <dt>Plan</dt>
+              <dd>Not selected</dd>
+            </div>
+          </dl>
+          <p className={styles.summaryFootnote}>Usage will be measured once your channel is active.</p>
+        </aside>
       </section>
     </div>
   );
