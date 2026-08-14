@@ -18,7 +18,7 @@ export default function Header() {
       </div>
       {/* header controls */}
       <div className="mxd-header__controls loading-fade">
-        <Link className="btn mxd-header__link slide-right-up" href="/#early-access" aria-label="Get Early Access">
+        <Link className="btn mxd-header__link slide-right-up" href="/sign-in" aria-label="Get Early Access">
           <span className="btn-caption mxd-scramble">Get Early Access</span>
           <i>
             <svg xmlns="http://www.w3.org/2000/svg" version="1.1" viewBox="0 0 18 18">
