@@ -9,8 +9,8 @@ export default function DashboardLayout({ children }: { children: ReactNode }) {
       className={`${styles.shell} dashboard-shell`}
       style={
         {
-          "--sidebar-width": "17.5rem",
-          "--sidebar-width-icon": "4rem",
+          "--sidebar-width": "28rem",
+          "--sidebar-width-icon": "6.4rem",
         } as CSSProperties
       }
     >
