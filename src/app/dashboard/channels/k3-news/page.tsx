@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { ArrowSquareOutIcon, CaretRightIcon } from "@phosphor-icons/react/ssr";
 import Link from "next/link";
+import DashboardUtilities from "@/components/dashboard/DashboardUtilities";
 import styles from "./channel.module.css";
 
 export const metadata: Metadata = {
@@ -28,9 +29,7 @@ export default function K3NewsOverviewPage() {
           <CaretRightIcon aria-hidden="true" />
           <strong>K3 News</strong>
         </nav>
-        <button className={styles.studioAction} type="button">
-          Open in Tymax Studio <ArrowSquareOutIcon weight="bold" aria-hidden="true" />
-        </button>
+        <div className={styles.topbarActions}><DashboardUtilities /><button className={styles.studioAction} type="button">Open in Tymax Studio <ArrowSquareOutIcon weight="bold" aria-hidden="true" /></button></div>
       </header>
 
       <nav className={styles.channelNavigation} aria-label="Channel administration">
