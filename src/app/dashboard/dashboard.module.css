@@ -77,12 +77,6 @@
 :global(.dashboard-shell [data-sidebar="group-label"]) { height: 3.4rem; padding-inline: 1rem; font-size: 1.2rem; letter-spacing: 0.08em; text-transform: uppercase; }
 :global(.dashboard-shell [data-sidebar="header"]), :global(.dashboard-shell [data-sidebar="footer"]) { padding: 1.2rem; }
 :global(.dashboard-shell [data-sidebar="trigger"]) { width: 4rem; height: 4rem; }
-:global(.dashboard-shell [data-sidebar="content"]) { scrollbar-width: thin; scrollbar-color: transparent transparent; }
-:global(.dashboard-shell [data-sidebar="content"]:hover) { scrollbar-color: rgba(241, 239, 234, 0.35) transparent; }
-:global(.dashboard-shell [data-sidebar="content"]::-webkit-scrollbar) { display: block !important; width: 0.6rem; }
-:global(.dashboard-shell [data-sidebar="content"]::-webkit-scrollbar-track) { background: transparent; }
-:global(.dashboard-shell [data-sidebar="content"]::-webkit-scrollbar-thumb) { border: 0.2rem solid transparent; border-radius: 1rem; background: transparent; background-clip: padding-box; }
-:global(.dashboard-shell [data-sidebar="content"]:hover::-webkit-scrollbar-thumb) { background-color: rgba(241, 239, 234, 0.35); }
 
 @media (max-width: 900px) { .lowerGrid { grid-template-columns: 1fr; gap: 0; } .activitySection { padding-top: 0; } .nodeGrid { grid-template-columns: 1fr; } .nodeGrid article { border-right: 0; border-bottom: 1px solid var(--line); }.nodeGrid article:last-child { border-bottom: 0; } }
 @media (max-width: 680px) { .main { padding: 1rem; }.topbarActions button:not(.accountControl) { font-size: 0; }.topbarActions button:not(.accountControl) svg { width: 1rem; height: 1rem; }.pageHeading { display: block; padding-top: 4.5rem; }.introduction { margin-top: 1.5rem; }.channelRow { grid-template-columns: 1fr; gap: 0.8rem; }.rowActions { margin-top: 0.2rem; }.attentionItem { grid-template-columns: 1fr; gap: 0.55rem; }.attentionItem button { padding: 0; }.sectionHeading { align-items: end; } }
