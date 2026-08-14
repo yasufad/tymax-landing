@@ -80,7 +80,6 @@ export default function DownloadPage() {
                               <span className="tag tag-m meta-tag mxd-scramble loading-item">Windows</span>
                               <span className="tag tag-m meta-tag mxd-scramble loading-item">macOS</span>
                               <span className="tag tag-m meta-tag mxd-scramble loading-item">Linux</span>
-                              <span className="tag tag-m meta-tag mxd-scramble loading-item">Desktop</span>
                             </div>
                           </div>
                         </div>
