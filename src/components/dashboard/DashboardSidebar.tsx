@@ -2,12 +2,18 @@
 
 import {
   BroadcastIcon,
+  ChartBarIcon,
   CaretDownIcon,
   ChartLineUpIcon,
   CreditCardIcon,
+  DesktopTowerIcon,
+  FilmReelIcon,
   GearIcon,
   HouseIcon,
+  PlugsConnectedIcon,
+  ShieldCheckIcon,
   UserCircleIcon,
+  UsersThreeIcon,
 } from "@phosphor-icons/react";
 import Link from "next/link";
 import {
@@ -24,12 +30,39 @@ import {
   SidebarRail,
 } from "@/components/ui/sidebar";
 
-const navigationItems = [
-  { label: "Overview", href: "/dashboard", icon: HouseIcon, active: true },
-  { label: "Channels", icon: BroadcastIcon },
-  { label: "Usage", icon: ChartLineUpIcon },
-  { label: "Billing", icon: CreditCardIcon },
-  { label: "Settings", icon: GearIcon },
+const navigationGroups = [
+  {
+    label: "Operations",
+    items: [
+      { label: "Overview", href: "/dashboard", icon: HouseIcon, active: true },
+      { label: "Channels", icon: BroadcastIcon },
+    ],
+  },
+  {
+    label: "Content",
+    items: [
+      { label: "Media", icon: FilmReelIcon },
+      { label: "Recordings", icon: FilmReelIcon },
+    ],
+  },
+  {
+    label: "Insights",
+    items: [
+      { label: "Analytics", icon: ChartBarIcon },
+      { label: "Usage", icon: ChartLineUpIcon },
+    ],
+  },
+  {
+    label: "Organisation",
+    items: [
+      { label: "Members", icon: UsersThreeIcon },
+      { label: "Roles", icon: ShieldCheckIcon },
+      { label: "Integrations", icon: PlugsConnectedIcon },
+      { label: "Nodes", icon: DesktopTowerIcon },
+      { label: "Billing", icon: CreditCardIcon },
+      { label: "Settings", icon: GearIcon },
+    ],
+  },
 ];
 
 export default function DashboardSidebar() {
@@ -45,7 +78,7 @@ export default function DashboardSidebar() {
           </SidebarMenuItem>
         </SidebarMenu>
 
-        <SidebarMenu className="mt-6">
+        <SidebarMenu className="mt-4">
           <SidebarMenuItem>
             <SidebarMenuButton size="lg" tooltip="Workspace" disabled>
               <span className="flex size-7 shrink-0 items-center justify-center rounded-md bg-primary font-mono text-[0.65rem] font-bold text-primary-foreground">YC</span>
@@ -60,30 +93,32 @@ export default function DashboardSidebar() {
       </SidebarHeader>
 
       <SidebarContent>
-        <SidebarGroup>
-          <SidebarGroupLabel>Workspace</SidebarGroupLabel>
-          <SidebarGroupContent>
-            <SidebarMenu>
-              {navigationItems.map((item) => {
-                const Icon = item.icon;
+        {navigationGroups.map((group) => (
+          <SidebarGroup key={group.label}>
+            <SidebarGroupLabel>{group.label}</SidebarGroupLabel>
+            <SidebarGroupContent>
+              <SidebarMenu>
+                {group.items.map((item) => {
+                  const Icon = item.icon;
 
-                return (
-                  <SidebarMenuItem key={item.label}>
-                    <SidebarMenuButton
-                      isActive={item.active}
-                      tooltip={item.label}
-                      disabled={!item.href}
-                      render={item.href ? <Link href={item.href} /> : undefined}
-                    >
-                      <Icon weight="regular" />
-                      <span>{item.label}</span>
-                    </SidebarMenuButton>
-                  </SidebarMenuItem>
-                );
-              })}
-            </SidebarMenu>
-          </SidebarGroupContent>
-        </SidebarGroup>
+                  return (
+                    <SidebarMenuItem key={item.label}>
+                      <SidebarMenuButton
+                        isActive={item.active}
+                        tooltip={item.label}
+                        disabled={!item.href}
+                        render={item.href ? <Link href={item.href} /> : undefined}
+                      >
+                        <Icon weight="regular" />
+                        <span>{item.label}</span>
+                      </SidebarMenuButton>
+                    </SidebarMenuItem>
+                  );
+                })}
+              </SidebarMenu>
+            </SidebarGroupContent>
+          </SidebarGroup>
+        ))}
       </SidebarContent>
 
       <SidebarFooter className="border-t border-sidebar-border p-3">
