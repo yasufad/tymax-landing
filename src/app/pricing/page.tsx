@@ -127,7 +127,7 @@ export default function PricingPage() {
                             <p className="pricing-data__caption t-small t-muted t-140 anim-uni-in-up">Monthly subscription</p>
                           </div>
                           <div className="pricing-data__btnholder anim-uni-in-up">
-                            <Link className="btn btn-default-icon btn-default-outline btn-default-fullwidth slide-right" href="/#early-access">
+                            <Link className="btn btn-default-icon btn-default-outline btn-default-fullwidth slide-right" href="/sign-in">
                               <span className="btn-caption mxd-scramble">Get Early Access</span>
                               <i className="btn-icon">
                                 <svg xmlns="http://www.w3.org/2000/svg" version="1.1" viewBox="0 0 18 18">
@@ -608,12 +608,12 @@ export default function PricingPage() {
                 
                 <div className="mxd-promo__content">
                   <div className="mxd-promo__btngroup anim-uni-in-up">
-                    <Link className="btn btn-line btn-line-opposite" href="/#early-access">
+                    <Link className="btn btn-line btn-line-opposite" href="/sign-in">
                       <span className="btn-caption mxd-scramble">Get Early Access</span>
                     </Link>
                   </div>
                   <div className="mxd-promo__caption">
-                    <Link className="active-cursor-accent" data-cursor-text="Get Early Access" href="/#early-access">
+                    <Link className="active-cursor-accent" data-cursor-text="Get Early Access" href="/sign-in">
                       <h2 className="reveal-type opposite">Ready to put your channel on air?</h2>
                     </Link>
                   </div>
