@@ -1,0 +1,151 @@
+:global(body:has(.auth-page)) {
+  background: #0f0f0f;
+}
+
+:global(body:has(.auth-page) .mxd-loader),
+:global(body:has(.auth-page) .mxd-page-transition),
+:global(body:has(.auth-page) .mxd-menu__contain),
+:global(body:has(.auth-page) .mxd-menu),
+:global(body:has(.auth-page) .mxd-header),
+:global(body:has(.auth-page) .mxd-footer),
+:global(body:has(.auth-page) .mxd-cursor) {
+  display: none;
+}
+
+.page {
+  --auth-border: rgba(255, 255, 255, 0.18);
+  --auth-muted: rgba(255, 255, 255, 0.58);
+  position: relative;
+  isolation: isolate;
+  display: grid;
+  min-height: 100svh;
+  overflow: hidden;
+  color: #f5f2ee;
+  background: #0f0f0f;
+}
+
+.backdrop,
+.wash {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+}
+
+.backdrop {
+  z-index: -2;
+  background-image: linear-gradient(90deg, rgba(15, 15, 15, 0.94) 0%, rgba(15, 15, 15, 0.72) 48%, rgba(15, 15, 15, 0.38) 100%), url("/img/hero/1920x1200_h01.webp");
+  background-position: center;
+  background-size: cover;
+  filter: saturate(0.65);
+  transform: scale(1.02);
+}
+
+.wash {
+  z-index: -1;
+  background-image: linear-gradient(rgba(255, 255, 255, 0.045) 1px, transparent 1px), linear-gradient(90deg, rgba(255, 255, 255, 0.045) 1px, transparent 1px), linear-gradient(180deg, rgba(15, 15, 15, 0.1), rgba(15, 15, 15, 0.7));
+  background-size: 4rem 4rem, 4rem 4rem, 100% 100%;
+  mask-image: linear-gradient(90deg, black, transparent 80%);
+}
+
+.brand {
+  position: absolute;
+  top: clamp(1.5rem, 3vw, 3rem);
+  left: clamp(1.5rem, 4vw, 5rem);
+  display: inline-flex;
+  align-items: center;
+  gap: 0.75rem;
+  font-family: var(--font-headline, Arial, sans-serif);
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+  line-height: 1;
+}
+
+.brandMark {
+  display: block;
+  width: 1.4rem;
+  height: 1.4rem;
+}
+
+.content {
+  display: grid;
+  width: min(100% - 3rem, 31rem);
+  place-self: center;
+  gap: 2.5rem;
+}
+
+.eyebrow {
+  margin: 0 0 1rem;
+  color: var(--auth-muted);
+  font-size: 0.7rem;
+  font-weight: 600;
+  letter-spacing: 0.15em;
+  line-height: 1;
+}
+
+.heading {
+  max-width: 10ch;
+  margin: 0;
+  font-family: var(--font-headline, Arial, sans-serif);
+  font-size: clamp(3.2rem, 7vw, 6.6rem);
+  font-weight: 500;
+  letter-spacing: -0.065em;
+  line-height: 0.87;
+}
+
+.button {
+  display: inline-flex;
+  min-height: 4.25rem;
+  align-items: center;
+  justify-content: center;
+  gap: 0.85rem;
+  border: 1px solid var(--auth-border);
+  border-radius: 0;
+  color: #121212;
+  background: #f5f2ee;
+  cursor: pointer;
+  font: inherit;
+  font-size: 0.88rem;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  transition: background-color 180ms ease, color 180ms ease, transform 180ms ease;
+}
+
+.button:hover {
+  color: #f5f2ee;
+  background: transparent;
+  transform: translateY(-2px);
+}
+
+.button:focus-visible {
+  outline: 2px solid #f5f2ee;
+  outline-offset: 4px;
+}
+
+.googleMark {
+  width: 1.25rem;
+  height: 1.25rem;
+}
+
+@media (max-width: 640px) {
+  .backdrop {
+    background-image: linear-gradient(180deg, rgba(15, 15, 15, 0.38), rgba(15, 15, 15, 0.94) 74%), url("/img/hero/1920x1200_h01.webp");
+    background-position: 62% center;
+  }
+
+  .wash {
+    mask-image: linear-gradient(180deg, black, transparent 74%);
+  }
+
+  .content {
+    width: min(100% - 2.5rem, 31rem);
+    align-self: end;
+    margin-bottom: 12vh;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .button {
+    transition: none;
+  }
+}
