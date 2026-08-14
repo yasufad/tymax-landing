@@ -82,6 +82,7 @@ export default function Navigation() {
                             <li className="submenu__item"><Link href="/#broadcasters">For Broadcasters</Link></li>
                             <li className="submenu__item"><Link href="/#audience">Audience</Link></li>
                             <li className="submenu__item"><Link href="/pricing">Pricing</Link></li>
+                            <li className="submenu__item"><Link href="/download">Download</Link></li>
                             <li className="submenu__item"><Link href="/sign-in">Early Access</Link></li>
                           </ul>
                           <div className="main-menu__divider divider-top"></div>
@@ -124,6 +125,7 @@ export default function Navigation() {
                             <li className="submenu__item"><Link href="/#capabilities">Capabilities</Link></li>
                             <li className="submenu__item"><Link href="/#broadcasters">Broadcasters</Link></li>
                             <li className="submenu__item"><Link href="/pricing">Pricing</Link></li>
+                            <li className="submenu__item"><Link href="/download">Download</Link></li>
                             <li className="submenu__item"><Link href="/#faq">FAQ</Link></li>
                             <li className="submenu__item"><Link href="/sign-in">Early Access</Link></li>
                           </ul>
