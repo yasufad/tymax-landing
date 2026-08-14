@@ -1,109 +1,119 @@
 import type { Metadata } from "next";
-import {
-  ArrowUpRightIcon,
-  BroadcastIcon,
-  CheckIcon,
-  LightningIcon,
-  WaveformIcon,
-} from "@phosphor-icons/react/ssr";
+import { BellIcon, CaretDownIcon, QuestionIcon } from "@phosphor-icons/react/ssr";
 import { SidebarTrigger } from "@/components/ui/sidebar";
 import styles from "./dashboard.module.css";
 
 export const metadata: Metadata = {
-  title: "Dashboard | Tymax",
-  description: "Manage your Tymax channel.",
+  title: "K3 Media | Tymax",
+  description: "Organisation administration for K3 Media.",
 };
+
+const channels = [
+  { name: "K3 News", state: "On air", health: "Healthy", detail: "Evening News", meta: "2,481 viewers · Operators: Sarah, Yasu", actions: ["View channel", "Open in Studio"], tone: "healthy" },
+  { name: "K3 Sports", state: "On air", health: "Degraded", detail: "YouTube reconnecting", meta: "Operator: Daniel", actions: ["Inspect"], tone: "degraded" },
+  { name: "K3 Music", state: "Automated", health: "Healthy", detail: "Next: Headlines · 20:00", meta: "No intervention required", actions: ["View channel"], tone: "healthy" },
+  { name: "K3 Culture", state: "Offline", health: "", detail: "Next scheduled broadcast: Tomorrow · 09:00", meta: "", actions: ["View channel"], tone: "offline" },
+];
 
 export default function DashboardPage() {
   return (
     <div>
       <header className={styles.topbar}>
-        <div className="flex items-center gap-3">
+        <div className={styles.topbarStart}>
           <SidebarTrigger aria-label="Toggle dashboard navigation" />
-          <span className={styles.metaLabel}>Overview</span>
-        </div>
-        <span className={styles.date}>Workspace control</span>
-      </header>
-
-      <section className={styles.hero}>
-        <div className={styles.heroCopy}>
-          <p className={styles.eyebrow}>Control room</p>
-          <h1 className={styles.title}>Set up your first channel.</h1>
-          <p className={styles.introduction}>
-            Bring together your programme, destinations, and audience activity in one place.
-          </p>
-          <button className={styles.primaryAction} type="button">
-            <BroadcastIcon weight="bold" aria-hidden="true" />
-            Create a channel
-            <ArrowUpRightIcon weight="bold" aria-hidden="true" />
+          <button className={styles.organisationSwitch} type="button">
+            <span>K3 Media</span>
+            <CaretDownIcon weight="bold" aria-hidden="true" />
           </button>
         </div>
-        <div className={styles.heroSignal} aria-hidden="true">
-          <div className={styles.signalMark}>
-            <WaveformIcon weight="light" />
+        <div className={styles.topbarActions}>
+          <button type="button"><BellIcon weight="regular" aria-hidden="true" /> Alerts</button>
+          <button type="button"><QuestionIcon weight="regular" aria-hidden="true" /> Help</button>
+          <button className={styles.accountControl} type="button">Yasu <CaretDownIcon weight="bold" aria-hidden="true" /></button>
+        </div>
+      </header>
+
+      <section className={styles.pageHeading}>
+        <div>
+          <p className={styles.eyebrow}>K3 Media</p>
+          <h1 className={styles.title}>Organisation overview</h1>
+        </div>
+        <p className={styles.introduction}>A clear view of your channels, infrastructure, and the work that needs attention.</p>
+      </section>
+
+      <section className={styles.section} aria-labelledby="channels-heading">
+        <div className={styles.sectionHeading}>
+          <div>
+            <p className={styles.sectionLabel}>Channels</p>
+            <h2 id="channels-heading">What is happening now.</h2>
           </div>
-          <span>Awaiting signal</span>
+          <button className={styles.primaryAction} type="button">Create channel</button>
+        </div>
+        <div className={styles.channelList}>
+          {channels.map((channel) => (
+            <article key={channel.name} className={styles.channelRow}>
+              <div className={styles.channelState}>
+                <span className={`${styles.statusDot} ${styles[channel.tone]}`} aria-hidden="true" />
+                <span>{channel.state}{channel.health ? ` · ${channel.health}` : ""}</span>
+              </div>
+              <div className={styles.channelDetails}>
+                <h3>{channel.name}</h3>
+                <p>{channel.detail}</p>
+                {channel.meta && <span>{channel.meta}</span>}
+              </div>
+              <div className={styles.rowActions}>
+                {channel.actions.map((action) => <button key={action} type="button">{action}</button>)}
+              </div>
+            </article>
+          ))}
         </div>
       </section>
 
-      <section className={styles.lowerGrid}>
-        <article className={styles.setupCard}>
-          <div className={styles.cardHeader}>
+      <div className={styles.lowerGrid}>
+        <section className={`${styles.section} ${styles.attentionSection}`} aria-labelledby="attention-heading">
+          <div className={styles.sectionHeading}>
             <div>
-              <p className={styles.cardTitle}>Getting started</p>
-              <h2 className={styles.sectionTitle}>A considered first broadcast.</h2>
+              <p className={styles.sectionLabel}>Requires attention</p>
+              <h2 id="attention-heading">Two items need review.</h2>
             </div>
-            <LightningIcon className={styles.cardIcon} weight="regular" aria-hidden="true" />
           </div>
-          <ol className={styles.checklist}>
-            <li className={styles.checklistItem}>
-              <span className={styles.stepNumber}>01</span>
-              <div>
-                <h3>Create your channel</h3>
-                <p>Give your programme a home before you go live.</p>
-              </div>
-            </li>
-            <li className={styles.checklistItem}>
-              <span className={styles.stepNumber}>02</span>
-              <div>
-                <h3>Connect a destination</h3>
-                <p>Choose where your audience will watch and listen.</p>
-              </div>
-            </li>
-            <li className={styles.checklistItem}>
-              <span className={styles.stepNumber}>03</span>
-              <div>
-                <h3>Schedule your first broadcast</h3>
-                <p>Set the time, then let Tymax handle the delivery.</p>
-              </div>
-            </li>
-          </ol>
-          <p className={styles.setupNote}>
-            <CheckIcon weight="bold" aria-hidden="true" /> No setup has been started yet.
-          </p>
-        </article>
+          <div className={styles.attentionList}>
+            <article className={styles.attentionItem}>
+              <span className={`${styles.severity} ${styles.high}`}>High</span>
+              <div><h3>K3 Sports — YouTube reconnecting</h3><p>Active for 2m 14s · Tymax playback remains healthy.</p></div>
+              <button type="button">Inspect incident</button>
+            </article>
+            <article className={styles.attentionItem}>
+              <span className={`${styles.severity} ${styles.warning}`}>Warning</span>
+              <div><h3>OB Laptop — Media Runtime update required</h3><p>The node remains online and is operating K3 Sports.</p></div>
+              <button type="button">Inspect node</button>
+            </article>
+          </div>
+        </section>
 
-        <aside className={styles.workspaceCard}>
-          <div className={styles.cardHeader}>
-            <p className={styles.cardTitle}>Workspace</p>
-            <span className={styles.metaLabel}>Current period</span>
+        <section className={`${styles.section} ${styles.activitySection}`} aria-labelledby="activity-heading">
+          <div className={styles.sectionHeading}>
+            <div><p className={styles.sectionLabel}>Recent activity</p><h2 id="activity-heading">Organisation changes.</h2></div>
           </div>
-          <dl className={styles.summaryList}>
-            <div>
-              <dt>Channels</dt>
-              <dd>0</dd>
-            </div>
-            <div>
-              <dt>Usage</dt>
-              <dd>—</dd>
-            </div>
-            <div>
-              <dt>Plan</dt>
-              <dd>Not selected</dd>
-            </div>
-          </dl>
-          <p className={styles.summaryFootnote}>Usage will be measured once your channel is active.</p>
-        </aside>
+          <ol className={styles.activityList}>
+            <li><time>18:42</time><span>Sarah took Studio Camera 2 to Programme</span></li>
+            <li><time>18:31</time><span>Daniel acknowledged the YouTube incident</span></li>
+            <li><time>17:54</time><span>Tomorrow&apos;s K3 News schedule was published</span></li>
+            <li><time>16:08</time><span>Irene invited Alex to K3 Media</span></li>
+          </ol>
+        </section>
+      </div>
+
+      <section className={`${styles.section} ${styles.nodesSection}`} aria-labelledby="nodes-heading">
+        <div className={styles.sectionHeading}>
+          <div><p className={styles.sectionLabel}>Nodes</p><h2 id="nodes-heading">Infrastructure readiness.</h2></div>
+          <button className={styles.secondaryAction} type="button">Register node</button>
+        </div>
+        <div className={styles.nodeGrid}>
+          <article><span className={`${styles.statusDot} ${styles.healthy}`} aria-hidden="true" /><h3>Main Studio</h3><p>Online · Windows · Media Runtime ready</p><span>Operating K3 News</span></article>
+          <article><span className={`${styles.statusDot} ${styles.degraded}`} aria-hidden="true" /><h3>OB Laptop</h3><p>Online · Media Runtime update available</p><span>Operating K3 Sports</span></article>
+          <article><span className={`${styles.statusDot} ${styles.offline}`} aria-hidden="true" /><h3>Backup Encoder</h3><p>Offline · Last seen 2 days ago</p><span>No channel assignment</span></article>
+        </div>
       </section>
     </div>
   );
