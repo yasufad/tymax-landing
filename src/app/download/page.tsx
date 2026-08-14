@@ -124,7 +124,7 @@ export default function DownloadPage() {
                           </div>
                           <div className="pricing-data__info">
                             <div className="pricing-data__price" aria-hidden="true">
-                              <platform.icon weight="thin" style={{ width: "4.75rem", height: "4.75rem" }} />
+                              <platform.icon weight="fill" style={{ width: "7.5rem", height: "7.5rem" }} />
                             </div>
                             <div className="pricing-data__btnholder anim-uni-in-up">
                               <button className="btn btn-default-icon btn-default-outline btn-default-fullwidth slide-right" type="button">
