@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { AppleLogoIcon, LinuxLogoIcon, WindowsLogoIcon } from "@phosphor-icons/react/ssr";
 import Link from "next/link";
 
 export const metadata: Metadata = {
@@ -10,18 +11,21 @@ const platforms = [
   {
     name: "Windows",
     tag: "Windows 10+",
+    icon: WindowsLogoIcon,
     button: "Download for Windows",
     details: ["Windows 10 or later", "64-bit Intel or AMD processor", "Installer coming soon"],
   },
   {
     name: "macOS",
     tag: "macOS 13+",
+    icon: AppleLogoIcon,
     button: "Download for macOS",
     details: ["macOS Ventura or later", "Apple silicon and Intel", "Installer coming soon"],
   },
   {
     name: "Linux",
     tag: "Linux",
+    icon: LinuxLogoIcon,
     button: "Download for Linux",
     details: ["Ubuntu 22.04+ and compatible distributions", "64-bit Intel or AMD processor", "Package coming soon"],
   },
@@ -119,6 +123,9 @@ export default function DownloadPage() {
                             <p className="pricing-header__title anim-uni-in-up">{platform.name}</p>
                           </div>
                           <div className="pricing-data__info">
+                            <div className="pricing-data__price" aria-hidden="true">
+                              <platform.icon weight="thin" style={{ width: "4.75rem", height: "4.75rem" }} />
+                            </div>
                             <div className="pricing-data__btnholder anim-uni-in-up">
                               <button className="btn btn-default-icon btn-default-outline btn-default-fullwidth slide-right" type="button">
                                 <span className="btn-caption mxd-scramble">{platform.button}</span>
