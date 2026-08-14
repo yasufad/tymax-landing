@@ -59,7 +59,7 @@
 
 .content {
   display: grid;
-  width: min(100% - 3rem, 31rem);
+  width: min(100% - 3rem, 36rem);
   place-self: center;
   gap: 2.5rem;
 }
@@ -85,6 +85,12 @@
 
 .button {
   cursor: pointer;
+  gap: clamp(1rem, 3vw, 2rem);
+  font-size: clamp(1.25rem, 4.4vw, 2rem);
+}
+
+.button :global(.btn-caption) {
+  white-space: nowrap;
 }
 
 .button:focus-visible {
@@ -111,7 +117,7 @@
   }
 
   .content {
-    width: min(100% - 2.5rem, 31rem);
+    width: min(100% - 2rem, 36rem);
     align-self: end;
     margin-bottom: 12vh;
   }
