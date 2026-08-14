@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Link from "next/link";
 
 export const metadata: Metadata = {
   title: "Page Not Found (404) - Tymax",
@@ -137,14 +138,14 @@ export default function NotFound() {
                 </div>
                 <div className="mxd-error__caption">
                   <p className="loading-split">This page doesn&apos;t exist or has tuned out. <span>Signal lost.</span></p>
-                  <a className="btn btn-default-icon btn-default-icon-left btn-default-outline slide-left loading-fade" href="index.html">
+                  <Link className="btn btn-default-icon btn-default-icon-left btn-default-outline slide-left loading-fade" href="/">
                     <i className="btn-icon">
                       <svg xmlns="http://www.w3.org/2000/svg" version="1.1" viewBox="0 0 18 18">
                         <path d="M7.2,18v-3.6h3.6v3.6h-3.6ZM3.6,7.2H0v3.6h3.6v3.6h3.6v-3.6h10.8v-3.6H7.2v-3.6h-3.6s0,3.6,0,3.6ZM7.2,3.6h3.6V0h-3.6v3.6Z"/>
                       </svg>
                     </i>
                     <span className="btn-caption mxd-scramble">Back to Home</span>
-                  </a>
+                  </Link>
                 </div>
               </div>
               
@@ -153,7 +154,7 @@ export default function NotFound() {
               <div className="mxd-error__dataline loading-fade">
                 <div className="mxd-error__dataitem">
                   <span className="tag tag-m">Copyright 
-                    <a className="mxd-scramble" href="index.html">Tymax</a>
+                    <Link className="mxd-scramble" href="/">Tymax</Link>
                     . All rights reserved
                   </span>
                 </div>
