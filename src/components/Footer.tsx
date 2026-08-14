@@ -28,7 +28,7 @@ export default function Footer() {
                               <li><Link className="anim-uni-slide-down" href="/#distribution"><span>Distribution</span></Link></li>
                               <li><Link className="anim-uni-slide-down" href="/#audience"><span>Audience</span></Link></li>
                               <li><Link className="anim-uni-slide-down" href="/pricing"><span>Pricing</span></Link></li>
-                              <li><Link className="anim-uni-slide-down" href="/#early-access"><span>Early Access</span></Link></li>
+                              <li><Link className="anim-uni-slide-down" href="/sign-in"><span>Early Access</span></Link></li>
                             </ul>
                           </div>
                         </div>
