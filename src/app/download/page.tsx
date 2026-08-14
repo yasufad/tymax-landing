@@ -69,7 +69,7 @@ export default function DownloadPage() {
                         <div className="row g-0">
                           <div className="col-12 col-xl-9 mxd-grid-item">
                             <div className="inner-headline__title pre-subtitle-large">
-                              <h1 className="large loading-split" style={{ color: "#c92a2a" }}>Get Tymax Studio</h1>
+                              <h1 className="large loading-split">Get Tymax Studio</h1>
                             </div>
                             <div className="inner-headline__subtitle loading-item">
                               <p>Broadcast from your desktop. <span>Choose your platform.</span></p>
