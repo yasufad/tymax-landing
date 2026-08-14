@@ -10,21 +10,18 @@ const platforms = [
   {
     name: "Windows",
     tag: "Windows 10+",
-    description: "A broadcast workstation for your Windows setup.",
     button: "Download for Windows",
     details: ["Windows 10 or later", "64-bit Intel or AMD processor", "Installer coming soon"],
   },
   {
     name: "macOS",
     tag: "macOS 13+",
-    description: "A native Tymax workspace for Mac, ready for the studio.",
     button: "Download for macOS",
     details: ["macOS Ventura or later", "Apple silicon and Intel", "Installer coming soon"],
   },
   {
     name: "Linux",
     tag: "Linux",
-    description: "A flexible desktop client for Linux broadcast environments.",
     button: "Download for Linux",
     details: ["Ubuntu 22.04+ and compatible distributions", "64-bit Intel or AMD processor", "Package coming soon"],
   },
@@ -119,8 +116,7 @@ export default function DownloadPage() {
                         </div>
                         <div className="mxd-pricing-table__data">
                           <div className="pricing-data__header">
-                            <p className="pricing-header__title anim-uni-in-up">Tymax <span>{platform.name}</span></p>
-                            <p className="pricing-header__descr t-bold anim-uni-in-up">{platform.description}</p>
+                            <p className="pricing-header__title anim-uni-in-up">{platform.name}</p>
                           </div>
                           <div className="pricing-data__info">
                             <div className="pricing-data__price">
