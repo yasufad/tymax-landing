@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { BellIcon, CaretDownIcon, QuestionIcon } from "@phosphor-icons/react/ssr";
+import DashboardUtilities, { OrganisationControl } from "@/components/dashboard/DashboardUtilities";
 import { SidebarTrigger } from "@/components/ui/sidebar";
 import styles from "./dashboard.module.css";
 
@@ -21,16 +21,9 @@ export default function DashboardPage() {
       <header className={styles.topbar}>
         <div className={styles.topbarStart}>
           <SidebarTrigger aria-label="Toggle dashboard navigation" />
-          <button className={styles.organisationSwitch} type="button">
-            <span>K3 Media</span>
-            <CaretDownIcon weight="bold" aria-hidden="true" />
-          </button>
+          <OrganisationControl />
         </div>
-        <div className={styles.topbarActions}>
-          <button type="button"><BellIcon weight="regular" aria-hidden="true" /> Alerts</button>
-          <button type="button"><QuestionIcon weight="regular" aria-hidden="true" /> Help</button>
-          <button className={styles.accountControl} type="button">Yasu <CaretDownIcon weight="bold" aria-hidden="true" /></button>
-        </div>
+        <DashboardUtilities />
       </header>
 
       <section className={styles.pageHeading}>
