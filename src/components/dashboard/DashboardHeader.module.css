@@ -1,0 +1,41 @@
+.header {
+  position: sticky;
+  top: 0;
+  z-index: 30;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  min-height: 4.2rem;
+  padding: 0.8rem clamp(1.25rem, 3vw, 3.5rem);
+  border-bottom: 1px solid var(--line);
+  background: rgba(25, 28, 31, 0.85);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+}
+
+.left {
+  display: flex;
+  align-items: center;
+  gap: 1.2rem;
+}
+
+.right {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.crumbs {
+  color: var(--muted);
+  font-size: 1.4rem;
+  font-weight: 600;
+}
+
+.crumbs strong {
+  color: var(--text);
+}
+
+.separator {
+  margin: 0 0.4rem;
+  opacity: 0.5;
+}
