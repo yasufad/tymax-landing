@@ -1,5 +1,6 @@
 "use client";
 
+import { Alex_Brush } from "next/font/google";
 import {
   BroadcastIcon,
   ChartBarIcon,
@@ -29,6 +30,12 @@ import {
   SidebarMenuButton,
   SidebarMenuItem,
 } from "@/components/ui/sidebar";
+
+const alexBrush = Alex_Brush({
+  weight: "400",
+  subsets: ["latin"],
+  display: "swap",
+});
 
 const navigationGroups = [
   {
@@ -73,10 +80,12 @@ export default function DashboardSidebar() {
       <SidebarHeader className="flex min-h-[4.2rem] justify-center border-b border-sidebar-border px-3 py-0">
         <SidebarMenu>
           <SidebarMenuItem>
-            <SidebarMenuButton size="lg" className="h-9 px-2" tooltip="Tymax home" render={<Link href="/" />}>
-              <img className="size-8 shrink-0 invert" src="/img/tymax-logo.svg" alt="Tymax" />
-              <span className="font-mono text-lg font-bold tracking-[-0.05em] text-sidebar-foreground group-data-[collapsible=icon]:hidden">
+            <SidebarMenuButton size="lg" className="h-10 px-2" tooltip="Tymax home" render={<Link href="/" />}>
+              <span className={`${alexBrush.className} text-3xl text-sidebar-foreground group-data-[collapsible=icon]:hidden`}>
                 Tymax
+              </span>
+              <span className={`${alexBrush.className} hidden text-2xl text-sidebar-foreground group-data-[collapsible=icon]:inline-block`}>
+                T
               </span>
             </SidebarMenuButton>
           </SidebarMenuItem>
