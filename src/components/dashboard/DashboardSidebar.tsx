@@ -2,8 +2,8 @@
 
 import {
   BroadcastIcon,
-  ChartBarIcon,
   CaretDownIcon,
+  ChartBarIcon,
   ChartLineUpIcon,
   CreditCardIcon,
   DesktopTowerIcon,
@@ -14,6 +14,7 @@ import {
   ShieldCheckIcon,
   UserCircleIcon,
   UsersThreeIcon,
+  VideoCameraIcon,
 } from "@phosphor-icons/react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
@@ -43,7 +44,7 @@ const navigationGroups = [
     label: "Content",
     items: [
       { label: "Media", href: "/dashboard/media", icon: FilmReelIcon },
-      { label: "Recordings", href: "/dashboard/recordings", icon: FilmReelIcon },
+      { label: "Recordings", href: "/dashboard/recordings", icon: VideoCameraIcon },
     ],
   },
   {
@@ -75,21 +76,25 @@ export default function DashboardSidebar() {
         <SidebarMenu>
           <SidebarMenuItem>
             <SidebarMenuButton size="lg" tooltip="Tymax home" render={<Link href="/" />}>
-              <img className="size-7 shrink-0 invert" src="/img/tymax-logo.svg" alt="" />
-              <span className="font-mono text-sm font-semibold tracking-[-0.05em] text-sidebar-foreground">Tymax</span>
+              <img className="size-7 shrink-0" src="/img/tymax-logo.svg" alt="Tymax" />
+              <span className="font-mono text-sm font-semibold tracking-[-0.05em] text-sidebar-foreground group-data-[collapsible=icon]:hidden">
+                Tymax
+              </span>
             </SidebarMenuButton>
           </SidebarMenuItem>
         </SidebarMenu>
 
         <SidebarMenu className="mt-4">
           <SidebarMenuItem>
-            <SidebarMenuButton size="lg" tooltip="K3 Media" render={<Link href="/dashboard/switcher" />}>
-              <span className="flex size-7 shrink-0 items-center justify-center rounded-md bg-primary font-mono text-[0.65rem] font-bold text-primary-foreground">YC</span>
-              <span className="grid flex-1 text-left text-sm leading-tight">
+            <SidebarMenuButton size="lg" tooltip="Switch organisation" render={<Link href="/dashboard/switcher" />}>
+              <span className="flex size-7 shrink-0 items-center justify-center rounded-md bg-primary font-mono text-[0.65rem] font-bold text-primary-foreground">
+                KM
+              </span>
+              <span className="grid flex-1 text-left text-sm leading-tight group-data-[collapsible=icon]:hidden">
                 <span className="truncate font-medium">K3 Media</span>
                 <span className="truncate font-mono text-[0.65rem] text-muted-foreground">Organisation</span>
               </span>
-              <CaretDownIcon className="ml-auto size-4" weight="bold" />
+              <CaretDownIcon className="ml-auto size-4 group-data-[collapsible=icon]:hidden" weight="bold" />
             </SidebarMenuButton>
           </SidebarMenuItem>
         </SidebarMenu>
@@ -126,9 +131,14 @@ export default function DashboardSidebar() {
       <SidebarFooter className="border-t border-sidebar-border p-3">
         <SidebarMenu>
           <SidebarMenuItem>
-            <SidebarMenuButton size="lg" tooltip="Your account" disabled>
+            <SidebarMenuButton
+              size="lg"
+              tooltip="Your account"
+              isActive={pathname.startsWith("/dashboard/account")}
+              render={<Link href="/dashboard/account" />}
+            >
               <UserCircleIcon weight="regular" />
-              <span>Your account</span>
+              <span className="group-data-[collapsible=icon]:hidden">Your account</span>
             </SidebarMenuButton>
           </SidebarMenuItem>
         </SidebarMenu>
@@ -137,3 +147,4 @@ export default function DashboardSidebar() {
     </Sidebar>
   );
 }
+
