@@ -1,7 +1,6 @@
 import type { Metadata } from "next";
-import { ArrowSquareOutIcon, CaretRightIcon } from "@phosphor-icons/react/ssr";
+import { ArrowSquareOutIcon } from "@phosphor-icons/react/ssr";
 import Link from "next/link";
-import DashboardUtilities from "@/components/dashboard/DashboardUtilities";
 import styles from "./channel.module.css";
 
 export const metadata: Metadata = {
@@ -23,15 +22,6 @@ const channelTabs = [
 export default function K3NewsOverviewPage() {
   return (
     <div className={styles.page}>
-      <header className={styles.topbar}>
-        <nav className={styles.breadcrumbs} aria-label="Breadcrumb">
-          <span>K3 Media</span>
-          <CaretRightIcon aria-hidden="true" />
-          <strong>K3 News</strong>
-        </nav>
-        <div className={styles.topbarActions}><DashboardUtilities /><button className={styles.studioAction} type="button">Open in Tymax Studio <ArrowSquareOutIcon weight="bold" aria-hidden="true" /></button></div>
-      </header>
-
       <nav className={styles.channelNavigation} aria-label="Channel administration">
         {channelTabs.map(([label, href]) => <Link key={label} className={label === "Overview" ? styles.active : undefined} href={href}>{label}</Link>)}
       </nav>
