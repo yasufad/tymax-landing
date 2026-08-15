@@ -28,7 +28,7 @@
 .topbarActions button:hover, .rowActions button:hover, .attentionItem button:hover { color: var(--text); }
 .accountControl { padding-left: 0.75rem; border-left: 1px solid var(--line) !important; }
 
-.pageHeading { display: flex; align-items: end; justify-content: space-between; gap: 2rem; padding: clamp(4rem, 8vh, 7rem) 0 2.8rem; border-bottom: 1px solid var(--line); }
+.pageHeading { display: flex; align-items: end; justify-content: space-between; gap: 2rem; padding: 1.6rem 0 2.4rem; border-bottom: 1px solid var(--line); }
 .eyebrow, .sectionLabel, .channelState, .severity, .activityList time { font-family: var(--_font-accent, "JetBrains Mono", monospace); font-size: 1.2rem; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; }
 .eyebrow, .sectionLabel { margin: 0 0 0.75rem; color: var(--muted); }
 .title { margin: 0; font-size: clamp(2.75rem, 5.5vw, 5.5rem); font-weight: 500; letter-spacing: -0.07em; line-height: 0.9; color: var(--text, #f1efea); }
