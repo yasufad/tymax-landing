@@ -1,5 +1,4 @@
 import Link from "next/link";
-import DashboardUtilities from "@/components/dashboard/DashboardUtilities";
 import styles from "./AdminPage.module.css";
 
 type Screen = "schedule" | "sources" | "distribution" | "media" | "recordings" | "analytics" | "access" | "settings";
@@ -21,7 +20,6 @@ const content: Record<Screen, { title: string; copy: string; action: string; row
 export default function ChannelAdminPage({ screen }: { screen: Screen }) {
   const page = content[screen];
   return <div className={styles.page}>
-    <header className={styles.topbar}><span className={styles.crumbs}>K3 Media <strong>/ K3 News</strong></span><div className={styles.topActions}><Link className={styles.buttonSecondary} href="/dashboard/channels/k3-news">Channel overview</Link><DashboardUtilities /></div></header>
     <nav className={styles.tabs} aria-label="K3 News administration">{tabs.map((tab) => <Link key={tab} className={`${styles.tab} ${tab.toLowerCase() === screen ? styles.tabActive : ""}`} href={paths[tab]}>{tab}</Link>)}</nav>
     <section className={styles.heading}><div><p className={styles.eyebrow}>K3 News</p><h1>{page.title}</h1></div><p>{page.copy}</p><button className={styles.button} type="button">{page.action}</button></section>
     <section className={styles.section}><div className={styles.list}>{page.rows.map(([name, detail, state]) => <article className={styles.row} key={name}><div><h3>{name}</h3><p>{detail}</p></div><span className={styles.status}>{state}</span><button className={styles.buttonQuiet} type="button">Inspect</button></article>)}</div></section>
