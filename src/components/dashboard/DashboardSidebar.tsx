@@ -77,14 +77,14 @@ export default function DashboardSidebar() {
 
   return (
     <Sidebar collapsible="icon">
-      <SidebarHeader className="flex min-h-[4.2rem] justify-center border-b border-sidebar-border px-3 py-0">
-        <SidebarMenu>
-          <SidebarMenuItem>
-            <SidebarMenuButton size="lg" className="h-10 px-2" tooltip="Tymax home" render={<Link href="/" />}>
-              <span className={`${alexBrush.className} text-3xl text-sidebar-foreground group-data-[collapsible=icon]:hidden`}>
+      <SidebarHeader className="flex min-h-[4.2rem] items-center justify-center border-b border-sidebar-border px-3 py-1">
+        <SidebarMenu className="w-full">
+          <SidebarMenuItem className="flex w-full items-center">
+            <SidebarMenuButton size="lg" className="flex h-12 w-full items-center px-2 hover:bg-transparent" tooltip="Tymax home" render={<Link href="/" />}>
+              <span className={`${alexBrush.className} text-5xl leading-none text-sidebar-foreground group-data-[collapsible=icon]:hidden`}>
                 Tymax
               </span>
-              <span className={`${alexBrush.className} hidden text-2xl text-sidebar-foreground group-data-[collapsible=icon]:inline-block`}>
+              <span className={`${alexBrush.className} hidden text-4xl leading-none text-sidebar-foreground group-data-[collapsible=icon]:inline-block`}>
                 T
               </span>
             </SidebarMenuButton>
