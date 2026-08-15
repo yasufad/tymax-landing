@@ -70,12 +70,12 @@ export default function DashboardSidebar() {
 
   return (
     <Sidebar collapsible="icon">
-      <SidebarHeader className="border-b border-sidebar-border px-3 py-4">
+      <SidebarHeader className="flex min-h-[4.2rem] justify-center border-b border-sidebar-border px-3 py-0">
         <SidebarMenu>
           <SidebarMenuItem>
-            <SidebarMenuButton size="lg" className="h-11 px-2.5" tooltip="Tymax home" render={<Link href="/" />}>
-              <img className="size-9 shrink-0 invert" src="/img/tymax-logo.svg" alt="Tymax" />
-              <span className="font-mono text-xl font-bold tracking-[-0.05em] text-sidebar-foreground group-data-[collapsible=icon]:hidden">
+            <SidebarMenuButton size="lg" className="h-9 px-2" tooltip="Tymax home" render={<Link href="/" />}>
+              <img className="size-8 shrink-0 invert" src="/img/tymax-logo.svg" alt="Tymax" />
+              <span className="font-mono text-lg font-bold tracking-[-0.05em] text-sidebar-foreground group-data-[collapsible=icon]:hidden">
                 Tymax
               </span>
             </SidebarMenuButton>
