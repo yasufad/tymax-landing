@@ -37,10 +37,11 @@
 .section { padding: 3.6rem 0; border-bottom: 1px solid var(--line); }
 .sectionHeading { justify-content: space-between; gap: 1.5rem; margin-bottom: 2.2rem; }
 .sectionHeading h2 { margin: 0; font-size: clamp(2.4rem, 2.2vw, 3.2rem); font-weight: 600; letter-spacing: -0.05em; line-height: 1; color: var(--text, #f1efea); }
-.primaryAction, .secondaryAction { min-height: 4.4rem; padding: 0 1.6rem; border: 1px solid var(--line); border-radius: 0.45rem; color: var(--text); }
-.primaryAction { border-color: var(--accent); background: var(--accent); font: inherit; font-size: 1.4rem; font-weight: 700; cursor: pointer; }
-.primaryAction:hover { background: var(--accent-hover); }
-.secondaryAction:hover { background: var(--surface-raised); }
+.primaryAction, .secondaryAction { min-height: 3.8rem; padding: 0 1.4rem; border-radius: 0.5rem; font: inherit; font-size: 1.35rem; font-weight: 600; letter-spacing: -0.01em; transition: background-color 0.15s ease, border-color 0.15s ease, color 0.15s ease; cursor: pointer; }
+.primaryAction { border: 1px solid rgba(255, 255, 255, 0.12); color: #ffffff; background: var(--accent, #002bba); box-shadow: 0 1px 3px rgba(0, 0, 0, 0.25); }
+.primaryAction:hover { background: #163cd0; border-color: rgba(255, 255, 255, 0.2); }
+.secondaryAction { border: 1px solid var(--line); color: var(--text, #f1efea); background: rgba(255, 255, 255, 0.04); }
+.secondaryAction:hover { background: rgba(255, 255, 255, 0.09); border-color: rgba(255, 255, 255, 0.22); }
 
 .channelList { border: 1px solid var(--line); border-radius: 0.45rem; overflow: hidden; }
 .channelRow { display: grid; grid-template-columns: 13rem minmax(0, 1fr) auto; gap: 2.4rem; min-height: 11.5rem; padding: 2rem 2.4rem; border-bottom: 1px solid var(--line); background: var(--surface); }
