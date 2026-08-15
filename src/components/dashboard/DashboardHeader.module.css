@@ -11,6 +11,7 @@
   background: rgba(25, 28, 31, 0.85);
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
+  color: var(--text, #f1efea);
 }
 
 .left {
@@ -26,13 +27,13 @@
 }
 
 .crumbs {
-  color: var(--muted);
+  color: var(--muted, #9ca2a9);
   font-size: 1.4rem;
   font-weight: 600;
 }
 
 .crumbs strong {
-  color: var(--text);
+  color: var(--text, #f1efea);
 }
 
 .separator {
