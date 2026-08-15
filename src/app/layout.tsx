@@ -1,7 +1,6 @@
 import type { Metadata } from "next";
 import Script from "next/script";
 import { Analytics } from "@vercel/analytics/react";
-import Loader from "@/components/Loader";
 import Header from "@/components/Header";
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
@@ -64,7 +63,6 @@ export default function RootLayout({
         <link rel="stylesheet" type="text/css" href="/css/main.min.css" />
       </head>
       <body suppressHydrationWarning>
-        <Loader />
         <Navigation />
         <Header />
         {children}
