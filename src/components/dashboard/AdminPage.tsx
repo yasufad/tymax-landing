@@ -1,13 +1,13 @@
 import Link from "next/link";
 import type { ReactNode } from "react";
-import DashboardUtilities from "@/components/dashboard/DashboardUtilities";
 import styles from "./AdminPage.module.css";
 
 type Screen = "members" | "invite" | "roles" | "role" | "channels" | "nodes" | "media" | "recordings" | "analytics" | "usage" | "billing" | "integrations" | "settings" | "account" | "switcher" | "organisation" | "invitation" | "forbidden";
 
 const Button = ({ children, href, secondary = false }: { children: ReactNode; href?: string; secondary?: boolean }) => href ? <Link className={secondary ? styles.buttonSecondary : styles.button} href={href}>{children}</Link> : <button className={secondary ? styles.buttonSecondary : styles.button} type="button">{children}</button>;
 const QuietButton = ({ children }: { children: ReactNode }) => <button className={styles.buttonQuiet} type="button">{children}</button>;
-const Heading = ({ eyebrow, title, copy, action }: { eyebrow: string; title: string; copy?: string; action?: ReactNode }) => <><header className={styles.topbar}><span className={styles.crumbs}>K3 Media <strong>/ Administration</strong></span><DashboardUtilities /></header><section className={styles.heading}><div><p className={styles.eyebrow}>{eyebrow}</p><h1>{title}</h1></div>{copy && <p>{copy}</p>}{action}</section></>;
+const Heading = ({ eyebrow, title, copy, action }: { eyebrow: string; title: string; copy?: string; action?: ReactNode }) => <section className={styles.heading}><div><p className={styles.eyebrow}>{eyebrow}</p><h1>{title}</h1></div>{copy && <p>{copy}</p>}{action}</section>;
+
 const Status = ({ children, tone = "" }: { children: ReactNode; tone?: string }) => <span className={styles.status}><i className={`${styles.dot} ${tone ? styles[tone] : ""}`} />{children}</span>;
 
 function Members() { return <><Heading eyebrow="Organisation" title="Members" copy="People with access to K3 Media and its channels." action={<Button href="/dashboard/members/invite">Invite member</Button>} /><section className={styles.section}><div className={styles.toolbar}><input className={styles.search} placeholder="Search members..." /><div className={styles.filters}><button className={styles.filter}>Role</button><button className={styles.filter}>Status</button></div></div><div className={styles.list}>{[["Yasu","Owner · All channels","Active"],["Sarah","Producer · Organisation-wide","Active"],["Daniel","Engineer · K3 News, K3 Sports","Active"],["Alex","Invitation pending · Weekend Operator","Expires 21 August"]].map(([name, detail, state]) => <article className={styles.member} key={name}><div><h3>{name}</h3><p>{detail}</p></div><Status tone={name === "Alex" ? "warning" : ""}>{state}</Status>{name === "Alex" ? <QuietButton>Revoke</QuietButton> : <QuietButton>View member</QuietButton>}</article>)}</div></section></> }
