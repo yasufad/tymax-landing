@@ -116,7 +116,7 @@ a {
   }
 }
 
-/* Custom Sidebar Scrollbar */
+/* Custom Sidebar Scrollbar - Only visible on hover */
 [data-sidebar="content"]::-webkit-scrollbar {
   width: 4px;
 }
@@ -124,14 +124,20 @@ a {
   background: transparent;
 }
 [data-sidebar="content"]::-webkit-scrollbar-thumb {
-  background: rgba(241, 239, 234, 0.15);
+  background: transparent;
   border-radius: 4px;
 }
-[data-sidebar="content"]::-webkit-scrollbar-thumb:hover {
-  background: rgba(241, 239, 234, 0.3);
+[data-sidebar="content"]:hover::-webkit-scrollbar-thumb {
+  background: rgba(241, 239, 234, 0.2);
+}
+[data-sidebar="content"]:hover::-webkit-scrollbar-thumb:hover {
+  background: rgba(241, 239, 234, 0.4);
 }
 
 [data-sidebar="content"] {
   scrollbar-width: thin;
-  scrollbar-color: rgba(241, 239, 234, 0.15) transparent;
+  scrollbar-color: transparent transparent;
+}
+[data-sidebar="content"]:hover {
+  scrollbar-color: rgba(241, 239, 234, 0.2) transparent;
 }
