@@ -21,7 +21,6 @@ export default function DashboardPage() {
           <p className={styles.eyebrow}>K3 Media</p>
           <h1 className={styles.title}>Organisation overview</h1>
         </div>
-        <p className={styles.introduction}>A clear view of your channels, infrastructure, and the work that needs attention.</p>
       </section>
 
       <section className={styles.section} aria-labelledby="channels-heading">
