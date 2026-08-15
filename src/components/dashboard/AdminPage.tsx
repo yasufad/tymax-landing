@@ -6,7 +6,7 @@ type Screen = "members" | "invite" | "roles" | "role" | "channels" | "nodes" | "
 
 const Button = ({ children, href, secondary = false }: { children: ReactNode; href?: string; secondary?: boolean }) => href ? <Link className={secondary ? styles.buttonSecondary : styles.button} href={href}>{children}</Link> : <button className={secondary ? styles.buttonSecondary : styles.button} type="button">{children}</button>;
 const QuietButton = ({ children }: { children: ReactNode }) => <button className={styles.buttonQuiet} type="button">{children}</button>;
-const Heading = ({ eyebrow, title, copy, action }: { eyebrow: string; title: string; copy?: string; action?: ReactNode }) => <section className={styles.heading}><div><p className={styles.eyebrow}>{eyebrow}</p><h1>{title}</h1></div>{copy && <p>{copy}</p>}{action}</section>;
+const Heading = ({ eyebrow, title, action }: { eyebrow: string; title: string; copy?: string; action?: ReactNode }) => <section className={styles.heading}><div><p className={styles.eyebrow}>{eyebrow}</p><h1>{title}</h1></div>{action}</section>;
 
 const Status = ({ children, tone = "" }: { children: ReactNode; tone?: string }) => <span className={styles.status}><i className={`${styles.dot} ${tone ? styles[tone] : ""}`} />{children}</span>;
 
