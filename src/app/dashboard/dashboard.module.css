@@ -31,12 +31,12 @@
 .pageHeading { display: flex; align-items: end; justify-content: space-between; gap: 2rem; padding: clamp(4rem, 8vh, 7rem) 0 2.8rem; border-bottom: 1px solid var(--line); }
 .eyebrow, .sectionLabel, .channelState, .severity, .activityList time { font-family: var(--_font-accent, "JetBrains Mono", monospace); font-size: 1.2rem; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; }
 .eyebrow, .sectionLabel { margin: 0 0 0.75rem; color: var(--muted); }
-.title { margin: 0; font-size: clamp(2.75rem, 5.5vw, 5.5rem); font-weight: 500; letter-spacing: -0.07em; line-height: 0.9; }
+.title { margin: 0; font-size: clamp(2.75rem, 5.5vw, 5.5rem); font-weight: 500; letter-spacing: -0.07em; line-height: 0.9; color: var(--text, #f1efea); }
 .introduction { max-width: 34rem; margin: 0; color: var(--muted); font-size: 1.7rem; line-height: 1.55; }
 
 .section { padding: 3.6rem 0; border-bottom: 1px solid var(--line); }
 .sectionHeading { justify-content: space-between; gap: 1.5rem; margin-bottom: 2.2rem; }
-.sectionHeading h2 { margin: 0; font-size: clamp(2.4rem, 2.2vw, 3.2rem); font-weight: 600; letter-spacing: -0.05em; line-height: 1; }
+.sectionHeading h2 { margin: 0; font-size: clamp(2.4rem, 2.2vw, 3.2rem); font-weight: 600; letter-spacing: -0.05em; line-height: 1; color: var(--text, #f1efea); }
 .primaryAction, .secondaryAction { min-height: 4.4rem; padding: 0 1.6rem; border: 1px solid var(--line); border-radius: 0.45rem; color: var(--text); }
 .primaryAction { border-color: var(--accent); background: var(--accent); font: inherit; font-size: 1.4rem; font-weight: 700; cursor: pointer; }
 .primaryAction:hover { background: var(--accent-hover); }
