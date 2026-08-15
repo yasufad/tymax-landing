@@ -2,7 +2,6 @@
 
 import {
   BroadcastIcon,
-  CaretDownIcon,
   ChartBarIcon,
   ChartLineUpIcon,
   CreditCardIcon,
@@ -79,21 +78,6 @@ export default function DashboardSidebar() {
               <span className="font-mono text-sm font-semibold tracking-[-0.05em] text-sidebar-foreground group-data-[collapsible=icon]:hidden">
                 Tymax
               </span>
-            </SidebarMenuButton>
-          </SidebarMenuItem>
-        </SidebarMenu>
-
-        <SidebarMenu className="mt-4">
-          <SidebarMenuItem>
-            <SidebarMenuButton size="lg" tooltip="Switch organisation" render={<Link href="/dashboard/switcher" />}>
-              <span className="flex size-7 shrink-0 items-center justify-center rounded-md bg-primary font-mono text-[0.65rem] font-bold text-primary-foreground">
-                KM
-              </span>
-              <span className="grid flex-1 text-left text-sm leading-tight group-data-[collapsible=icon]:hidden">
-                <span className="truncate font-medium">K3 Media</span>
-                <span className="truncate font-mono text-[0.65rem] text-muted-foreground">Organisation</span>
-              </span>
-              <CaretDownIcon className="ml-auto size-4 group-data-[collapsible=icon]:hidden" weight="bold" />
             </SidebarMenuButton>
           </SidebarMenuItem>
         </SidebarMenu>
