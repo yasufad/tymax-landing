@@ -1,6 +1,4 @@
 import type { Metadata } from "next";
-import DashboardUtilities, { OrganisationControl } from "@/components/dashboard/DashboardUtilities";
-import { SidebarTrigger } from "@/components/ui/sidebar";
 import styles from "./dashboard.module.css";
 
 export const metadata: Metadata = {
@@ -18,14 +16,6 @@ const channels = [
 export default function DashboardPage() {
   return (
     <div>
-      <header className={styles.topbar}>
-        <div className={styles.topbarStart}>
-          <SidebarTrigger aria-label="Toggle dashboard navigation" />
-          <OrganisationControl />
-        </div>
-        <DashboardUtilities />
-      </header>
-
       <section className={styles.pageHeading}>
         <div>
           <p className={styles.eyebrow}>K3 Media</p>
