@@ -76,7 +76,7 @@ export default function DashboardSidebar() {
         <SidebarMenu>
           <SidebarMenuItem>
             <SidebarMenuButton size="lg" tooltip="Tymax home" render={<Link href="/" />}>
-              <img className="size-7 shrink-0" src="/img/tymax-logo.svg" alt="Tymax" />
+              <img className="size-7 shrink-0 invert" src="/img/tymax-logo.svg" alt="Tymax" />
               <span className="font-mono text-sm font-semibold tracking-[-0.05em] text-sidebar-foreground group-data-[collapsible=icon]:hidden">
                 Tymax
               </span>
