@@ -77,8 +77,8 @@ export default function DashboardSidebar() {
 
   return (
     <Sidebar collapsible="icon">
-      <SidebarHeader className="flex h-[4.2rem] min-h-[4.2rem] flex-row items-center border-b border-sidebar-border px-4 py-0">
-        <Link href="/" className="flex flex-row items-center gap-2 overflow-visible no-underline">
+      <SidebarHeader className="flex h-[4.2rem] min-h-[4.2rem] flex-row items-center border-b border-sidebar-border px-4 py-0 group-data-[collapsible=icon]:justify-center group-data-[collapsible=icon]:px-0">
+        <Link href="/" className="flex flex-row items-center gap-2 overflow-visible no-underline group-data-[collapsible=icon]:w-full group-data-[collapsible=icon]:justify-center">
           <span
             className="text-sidebar-foreground group-data-[collapsible=icon]:hidden"
             style={{
@@ -130,12 +130,13 @@ export default function DashboardSidebar() {
         ))}
       </SidebarContent>
 
-      <SidebarFooter className="border-t border-sidebar-border p-3">
-        <SidebarMenu>
-          <SidebarMenuItem>
+      <SidebarFooter className="border-t border-sidebar-border p-3 group-data-[collapsible=icon]:flex group-data-[collapsible=icon]:justify-center group-data-[collapsible=icon]:p-1.5">
+        <SidebarMenu className="group-data-[collapsible=icon]:items-center">
+          <SidebarMenuItem className="group-data-[collapsible=icon]:flex group-data-[collapsible=icon]:justify-center group-data-[collapsible=icon]:w-full">
             <SidebarMenuButton
               size="lg"
               tooltip="Your account"
+              className="group-data-[collapsible=icon]:size-8! group-data-[collapsible=icon]:p-0! group-data-[collapsible=icon]:justify-center"
               isActive={pathname.startsWith("/dashboard/account")}
               render={<Link href="/dashboard/account" />}
             >
