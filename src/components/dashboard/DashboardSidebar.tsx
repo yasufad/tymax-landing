@@ -136,7 +136,7 @@ export default function DashboardSidebar() {
             <SidebarMenuButton
               size="lg"
               tooltip="Your account"
-              className="group-data-[collapsible=icon]:size-8! group-data-[collapsible=icon]:p-0! group-data-[collapsible=icon]:justify-center"
+              className="group-data-[collapsible=icon]:size-9.5! group-data-[collapsible=icon]:p-2! group-data-[collapsible=icon]:rounded-lg group-data-[collapsible=icon]:justify-center"
               isActive={pathname.startsWith("/dashboard/account")}
               render={<Link href="/dashboard/account" />}
             >
